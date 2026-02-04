@@ -60,10 +60,10 @@ nav a:hover, nav a.active {
     border-bottom: 2px solid var(--warm-gold); 
 }
 
-/* --- TITULOS E HERO --- */
+/* --- HERO E INTRO --- */
 .hero-header { text-align: center; padding: 60px 20px 40px 20px; }
 .hero-header h1 { 
-    font-size: 2.8rem; 
+    font-size: 3rem; 
     color: var(--tropical-teal); 
     margin-bottom: 10px; 
     line-height: 1.2;
@@ -77,6 +77,57 @@ nav a:hover, nav a.active {
     letter-spacing: 3px;
 }
 
+.intro { padding: 20px 20px 80px 20px; display: flex; align-items: center; gap: 60px; }
+.intro-img img { 
+    width: 100%; 
+    border-radius: 8px; 
+    box-shadow: 20px 20px 0px rgba(198, 156, 109, 0.2); 
+}
+.intro-text h2 { font-size: 2.2rem; margin-bottom: 20px; color: var(--tropical-teal); }
+.address { 
+    display: block; margin-top: 25px; padding: 15px; 
+    background: var(--pure-white); border-left: 4px solid var(--warm-gold); 
+    font-size: 0.9rem; font-style: italic; color: var(--deep-wood);
+}
+
+/* --- BOTÕES --- */
+.btn {
+    display: inline-block; 
+    background-color: var(--tropical-teal); 
+    color: var(--pure-white);
+    padding: 16px 40px; 
+    border-radius: 50px;
+    font-size: 0.85rem; 
+    text-transform: uppercase;
+    letter-spacing: 1px; 
+    font-weight: 700; 
+    margin-top: 30px; 
+    border: 2px solid var(--tropical-teal);
+    box-shadow: 0 4px 15px rgba(31, 94, 86, 0.3);
+}
+.btn:hover { 
+    background-color: transparent; 
+    color: var(--tropical-teal); 
+}
+
+/* --- BANNER WI-FI COMPACTO --- */
+.wifi-banner {
+    background: linear-gradient(135deg, var(--tropical-teal), #2A7A70);
+    color: var(--pure-white);
+    padding: 25px;
+    border-radius: 12px; 
+    margin-bottom: 50px; text-align: center;
+    max-width: 400px; margin-left: auto; margin-right: auto;
+    box-shadow: 0 10px 25px rgba(31, 94, 86, 0.2);
+}
+.wifi-banner h2 { font-size: 1.4rem; margin-bottom: 5px; color: var(--pure-white); }
+.wifi-password-box {
+    background: rgba(255,255,255,0.15); 
+    padding: 8px 20px; 
+    margin-top: 15px; border-radius: 50px; display: inline-block;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
 /* --- GRID E CARDS --- */
 .section-title { color: var(--tropical-teal); font-size: 2rem; margin-bottom: 40px; text-align: center; }
 .grid-icons { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
@@ -84,7 +135,7 @@ nav a:hover, nav a.active {
 .card {
     padding: 0 0 35px 0;
     border: 1px solid rgba(0,0,0,0.02);
-    border-radius: 8px; /* Cantos menos arredondados = mais elegância */
+    border-radius: 8px;
     background-color: var(--pure-white); 
     transition: 0.4s;
     display: flex; flex-direction: column; align-items: center; text-align: center;
@@ -97,15 +148,28 @@ nav a:hover, nav a.active {
 .card-image {
     width: 100%; height: 180px; object-fit: cover;
     margin-bottom: 25px;
-    filter: brightness(0.95); /* Leve filtro para uniformizar */
+    filter: brightness(0.95);
 }
 
-/* Ícones SVG Grandes (Topo do Card) */
+/* --- ÍCONES SVG (A CORREÇÃO ESTÁ AQUI) --- */
 .card-padding-icon { padding-top: 45px; } 
+
+/* Classe para ícones gerais e da Home */
+.icon-svg { 
+    width: 40px; height: 40px; 
+    stroke: var(--warm-gold); /* Define a cor dourada */
+    fill: none; 
+    stroke-width: 1.5; 
+    margin-bottom: 20px; 
+}
+
+/* Classe para ícones maiores (se usado nas internas) */
 .icon-svg-large { 
     width: 45px; height: 45px; 
-    stroke: var(--warm-gold); /* Dourado */
-    fill: none; stroke-width: 1.2; margin-bottom: 20px; 
+    stroke: var(--warm-gold); 
+    fill: none; 
+    stroke-width: 1.2; 
+    margin-bottom: 20px; 
 }
 
 .card h3 { 
@@ -121,32 +185,15 @@ nav a:hover, nav a.active {
     font-weight: 300;
 }
 
-/* --- LISTAS ELEGANTES (Sem emojis) --- */
+/* --- LISTAS ELEGANTES --- */
 .clean-list {
-    list-style: none;
-    padding: 0 25px;
-    text-align: left;
-    font-size: 0.9rem;
-    color: #555;
+    list-style: none; padding: 0 25px; text-align: left; font-size: 0.9rem; color: #555;
 }
-
 .clean-list li {
-    margin-bottom: 12px;
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    line-height: 1.5;
+    margin-bottom: 12px; display: flex; align-items: flex-start; gap: 10px; line-height: 1.5;
 }
-
-/* Ícone pequeno para listas (check, bolinha, etc) */
 .list-icon {
-    min-width: 18px;
-    width: 18px;
-    height: 18px;
-    stroke: var(--warm-gold); /* Cor sólida elegante */
-    stroke-width: 2;
-    fill: none;
-    margin-top: 3px; /* Alinha com o texto */
+    min-width: 18px; width: 18px; height: 18px; stroke: var(--warm-gold); stroke-width: 2; fill: none; margin-top: 3px;
 }
 
 /* Footer */
@@ -168,4 +215,7 @@ footer {
     }
     nav a.active { background-color: var(--tropical-teal); color: var(--pure-white); }
     .hero-header h1 { font-size: 2.2rem; }
+    .intro { flex-direction: column; text-align: center; padding: 20px; gap: 30px; }
+    .intro-img img { box-shadow: 10px 10px 0px rgba(198, 156, 109, 0.2); }
+    .address { text-align: left; }
 }
