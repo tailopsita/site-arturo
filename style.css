@@ -105,22 +105,34 @@ nav a:hover, nav a.active { color: var(--warm-gold); border-bottom: 2px solid va
 .card p { font-size: 0.85rem; color: #666; padding: 0 20px; font-weight: 300; margin-bottom: 20px; }
 .card em { display: block; margin-top: 8px; font-style: normal; color: var(--warm-gold); font-weight: 500; font-size: 0.8rem; }
 
-/* --- ÍCONES SVG (A CORREÇÃO DO INÍCIO ESTÁ AQUI) --- */
+/* --- ÍCONES SVG (CORREÇÃO DE TAMANHOS) --- */
 .card-padding-icon { padding-top: 45px; } 
 
-/* Esta classe controla o tamanho dos ícones na Home e Internas */
+/* 1. Ícones da HOME (pequenos e delicados) */
 .icon-svg { 
-    width: 50px; /* Tamanho fixo para não ficar gigante */
+    width: 50px; 
     height: 50px; 
-    stroke: var(--warm-gold); /* Cor da linha */
-    fill: none; /* Sem preenchimento preto */
+    stroke: var(--warm-gold); 
+    fill: none; /* ESSENCIAL: Garante que não fique preto */
     stroke-width: 1.5; 
     margin-bottom: 20px; 
-    display: block; /* Garante que ocupe linha própria */
+    display: block; 
     margin-left: auto; margin-right: auto;
 }
 
-/* --- BOTÕES DOS CARDS (MAPA) --- */
+/* 2. Ícones INTERNOS (Apartamento/Checkin) - Mesmo estilo, tamanho controlado */
+.icon-svg-large { 
+    width: 60px; /* Um pouco maior para destaque */
+    height: 60px; 
+    stroke: var(--warm-gold); 
+    fill: none; /* ESSENCIAL */
+    stroke-width: 1.2; 
+    margin-bottom: 20px; 
+    display: block;
+    margin-left: auto; margin-right: auto;
+}
+
+/* --- BOTÕES DOS CARDS --- */
 .card-actions {
     display: flex; gap: 10px; margin-top: auto; padding: 0 20px; justify-content: center; width: 100%;
 }
