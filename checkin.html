@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Check-in & Check-out | Casa Nascimento 375</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -23,50 +23,65 @@
         </div>
     </header>
 
-    <div class="container" style="padding: 40px 20px;">
-        <h1>Chegada e Partida</h1>
-        <p>Tudo o que você precisa saber para uma estadia tranquila.</p>
+    <div class="hero-header">
+        <div class="container">
+            <h1>Chegada e Partida</h1>
+            <p class="subtitle">Informações essenciais para sua estadia</p>
+        </div>
+    </div>
 
-        <div class="grid-icons" style="margin-top: 40px;">
-            <div class="card" style="border-top: 5px solid #008080;">
-                <span class="icon">🕒</span>
+    <div class="container" style="padding-bottom: 60px;">
+
+        <div class="grid-icons">
+            <div class="card" style="border-top: 3px solid var(--deep-blue);">
+                <svg class="icon-svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                 <h3>Check-in: 14:00</h3>
-                <p>A Sra. [cite_start]Leda estará aguardando no apartamento para recepcionar você, explicar o funcionamento do imóvel e entregar as chaves [cite: 36-41].</p>
-                <p><em>*Check-in flexível deve ser consultado previamente.</em></p>
+                <p>A Sra. Leda aguardará no imóvel para entregar as chaves e apresentar a casa.</p>
+                <p style="font-size: 0.8rem; margin-top: 10px;"><em>*Para horários flexíveis, consulte previamente.</em></p>
             </div>
             
-            <div class="card" style="border-top: 5px solid #c0392b;">
-                <span class="icon">🏁</span>
+            <div class="card" style="border-top: 3px solid var(--charcoal);">
+                <svg class="icon-svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
                 <h3>Check-out: 10:00</h3>
-                <p>Na véspera da saída, combine o horário exato com a Sra. [cite_start]Leda para a vistoria e devolução das chaves [cite: 43-47].</p>
+                <p>Combine o horário exato de saída com a Sra. Leda para vistoria e devolução das chaves.</p>
             </div>
         </div>
 
-        <div style="background-color: #FDFBF7; padding: 30px; border-radius: 10px; margin-top: 50px; border: 1px solid #ddd;">
-            <h2>📋 Antes de Partir (Checklist)</h2>
-            <p>Para nos ajudar a manter a casa sempre perfeita, pedimos gentilmente:</p>
-            <ul style="list-style: none; margin-top: 20px;">
-                [cite_start]<li style="margin-bottom: 10px;">✅ Recolha o lixo comum e separe o reciclável[cite: 353].</li>
-                [cite_start]<li style="margin-bottom: 10px;">✅ Deixe as vasilhas limpas[cite: 354].</li>
-                [cite_start]<li style="margin-bottom: 10px;">✅ Feche todas as janelas e portas[cite: 357].</li>
-                [cite_start]<li style="margin-bottom: 10px;">✅ Desligue o ar condicionado e apague as luzes [cite: 358-359].</li>
-                [cite_start]<li style="margin-bottom: 10px;">✅ Verifique se não esqueceu pertences pessoais [cite: 355-356].</li>
-                <li style="margin-bottom: 10px;">🔑 Entregue as chaves para a Sra. [cite_start]Leda [cite: 362-363].</li>
+        <div style="background-color: var(--sand); padding: 40px; border-radius: 4px; margin-top: 50px;">
+            <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 20px; font-family: 'Playfair Display', serif; color: var(--deep-blue);">
+                Antes de Partir
+            </h2>
+            <p style="text-align: center; margin-bottom: 30px;">Para nos ajudar a manter a casa perfeita, pedimos gentilmente:</p>
+            
+            <ul style="list-style: none; max-width: 600px; margin: 0 auto; line-height: 2;">
+                <li>🗑️ Recolha o lixo comum e separe o reciclável.</li>
+                <li>🍽️ Deixe as vasilhas limpas.</li>
+                <li>🪟 Feche todas as janelas e portas.</li>
+                <li>💡 Desligue o ar condicionado e apague as luzes.</li>
+                <li>🔍 Verifique se não esqueceu pertences pessoais.</li>
+                <li>🔑 Entregue as chaves para a Sra. Leda.</li>
             </ul>
         </div>
 
-        <h2 style="margin-top: 50px; color: #c0392b;">🆘 Emergência e Segurança</h2>
+        <h2 class="section-title" style="text-align: center; margin-top: 60px;">
+            🆘 Segurança e Emergência
+        </h2>
         <div class="grid-icons">
             <div class="card">
                 <h3>Equipamentos</h3>
-                [cite_start]<p><strong>Extintor:</strong> No andar térreo, ao lado da porta de entrada [cite: 328-329].</p>
-                [cite_start]<p><strong>Kit Primeiros Socorros:</strong> No banheiro social, na mesinha abaixo do balcão[cite: 331].</p>
+                <p><strong>Extintor:</strong> No andar térreo, ao lado da entrada.</p>
+                <p><strong>Primeiros Socorros:</strong> No banheiro social (mesinha abaixo do balcão).</p>
             </div>
             <div class="card">
-                <h3>Contatos Úteis</h3>
-                <p><strong>Polícia:</strong> 190 | <strong>Bombeiros:</strong> 193</p>
-                [cite_start]<p><strong>Hospital:</strong> (21) 3257-1350 [cite: 341]</p>
-                [cite_start]<p><strong>Farmácia:</strong> (21) 96570-3253 [cite: 343]</p>
+                <h3>Telefones Úteis</h3>
+                <p><strong>Polícia:</strong> 190</p>
+                <p><strong>Bombeiros:</strong> 193</p>
+                <p><strong>Samu:</strong> 192</p>
+            </div>
+            <div class="card">
+                <h3>Local</h3>
+                <p><strong>Hospital:</strong> (21) 3257-1350</p>
+                <p><strong>Farmácia:</strong> (21) 96570-3253</p>
             </div>
         </div>
 
