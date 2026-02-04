@@ -1,9 +1,9 @@
-/* --- CORES E VARIÁVEIS (Nova Identidade) --- */
+/* --- CORES E VARIÁVEIS (Identidade Coastal Chic) --- */
 :root {
-    --deep-blue: #0E4D64;    /* Ação / Destaque */
-    --sand: #F0EAD6;         /* Detalhes / Fundo Secundário */
-    --off-white: #F8F5F0;    /* Fundo Principal */
-    --charcoal: #2C3335;     /* Texto */
+    --deep-blue: #0E4D64;
+    --sand: #F0EAD6;
+    --off-white: #F8F5F0;
+    --charcoal: #2C3335;
     --white: #FFFFFF;
 }
 
@@ -11,7 +11,7 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    font-family: 'Montserrat', sans-serif; /* Fonte de leitura */
+    font-family: 'Montserrat', sans-serif;
     background-color: var(--off-white);
     color: var(--charcoal);
     line-height: 1.6;
@@ -19,221 +19,91 @@ body {
 }
 
 /* Tipografia */
-h1, h2, h3, .logo {
-    font-family: 'Playfair Display', serif; /* Fonte sofisticada */
-}
-
+h1, h2, h3, .logo { font-family: 'Playfair Display', serif; }
 a { text-decoration: none; color: inherit; transition: 0.3s; }
 .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
 /* --- CABEÇALHO --- */
 header {
     background-color: var(--white);
-    padding: 20px 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.03); /* Sombra mais suave */
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    position: sticky; top: 0; z-index: 1000;
 }
-
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.4rem;
-    font-weight: 600; /* Menos negrito para ficar elegante */
-    color: var(--deep-blue);
-    letter-spacing: -0.5px;
-}
-
+.header-content { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.3rem; font-weight: 600; color: var(--deep-blue); letter-spacing: -0.5px; }
 nav ul { display: flex; list-style: none; gap: 20px; }
+nav a { color: var(--charcoal); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; padding: 5px 0; }
+nav a:hover, nav a.active { color: var(--deep-blue); border-bottom: 1px solid var(--deep-blue); }
 
-nav a {
-    color: var(--charcoal);
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 1.5px; /* Mais espaçamento entre letras = mais elegância */
-    font-weight: 500;
-    padding: 5px 0;
-}
+/* --- HERO E INTRO --- */
+.hero-header { text-align: center; padding: 50px 20px 30px 20px; background-color: var(--off-white); }
+.hero-header h1 { font-size: 2.8rem; color: var(--deep-blue); margin-bottom: 5px; font-weight: 400; }
+.subtitle { font-size: 1rem; color: var(--charcoal); font-style: italic; font-family: 'Playfair Display', serif; opacity: 0.8; }
 
-nav a:hover, nav a.active {
-    color: var(--deep-blue);
-    border-bottom: 1px solid var(--deep-blue); /* Linha mais fina */
-}
-
-/* --- HERO (Título Centralizado) --- */
-.hero-header {
-    text-align: center;
-    padding: 60px 20px 40px 20px;
-    background-color: var(--off-white);
-}
-
-.hero-header h1 {
-    font-size: 3rem;
-    color: var(--deep-blue);
-    margin-bottom: 10px;
-    font-weight: 400; /* Playfair fica bonita mais leve */
-}
-
-.subtitle {
-    font-size: 1.1rem;
-    color: var(--charcoal);
-    font-style: italic;
-    font-family: 'Playfair Display', serif;
-    opacity: 0.8;
-}
-
-/* --- SEÇÃO INTRO --- */
-.intro {
-    padding: 20px 20px 60px 20px;
-    display: flex;
-    align-items: center;
-    gap: 50px;
-}
-
-.intro-img img {
-    width: 100%;
-    border-radius: 4px; /* Cantos menos arredondados, mais moderno */
-    box-shadow: 15px 15px 0px var(--sand); /* Sombra na cor areia */
-}
-
-.intro-text h2 {
-    font-size: 2.2rem;
-    margin-bottom: 20px;
-    color: var(--deep-blue);
-}
-
-.address {
-    display: block;
-    margin-top: 20px;
-    padding: 15px;
-    background: var(--white);
-    border-left: 3px solid var(--deep-blue);
-    color: var(--charcoal);
-    font-size: 0.9rem;
-    font-style: italic;
-}
+.intro { padding: 20px 20px 60px 20px; display: flex; align-items: center; gap: 50px; }
+.intro-img img { width: 100%; border-radius: 4px; box-shadow: 15px 15px 0px var(--sand); }
+.intro-text h2 { font-size: 2rem; margin-bottom: 15px; color: var(--deep-blue); }
+.address { display: block; margin-top: 20px; padding: 15px; background: var(--white); border-left: 3px solid var(--deep-blue); font-size: 0.9rem; font-style: italic; }
 
 /* --- BOTÕES --- */
 .btn {
-    display: inline-block;
-    background-color: var(--deep-blue);
-    color: var(--white);
-    padding: 14px 35px;
-    border-radius: 2px; /* Botão mais quadrado = mais luxo */
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 600;
-    margin-top: 25px;
-    border: 1px solid var(--deep-blue);
+    display: inline-block; background-color: var(--deep-blue); color: var(--white);
+    padding: 12px 30px; border-radius: 2px; font-size: 0.8rem; text-transform: uppercase;
+    letter-spacing: 1px; font-weight: 600; margin-top: 20px; border: 1px solid var(--deep-blue);
+}
+.btn:hover { background-color: transparent; color: var(--deep-blue); }
+
+/* --- BANNER WI-FI (Corrigido para ser menor) --- */
+.wifi-banner {
+    background: var(--deep-blue); color: var(--white);
+    padding: 20px;
+    border-radius: 6px; margin-bottom: 40px; text-align: center;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    max-width: 500px; /* Limita a largura */
+    margin-left: auto; margin-right: auto; /* Centraliza */
+}
+.wifi-banner h2 { font-size: 1.5rem; margin: 5px 0; }
+.wifi-details { font-size: 1rem; opacity: 0.9; }
+.wifi-password-box {
+    border: 1px solid rgba(255,255,255,0.4); padding: 5px 20px; 
+    margin-top: 10px; border-radius: 4px; display: inline-block;
 }
 
-.btn:hover {
-    background-color: transparent;
-    color: var(--deep-blue);
-}
-
-/* --- GRID E ÍCONES SVG --- */
-.quick-access {
-    background-color: var(--white);
-    padding: 80px 0;
-    text-align: center;
-    border-top: 1px solid #eee;
-}
-
-.quick-access h2, .section-title {
-    color: var(--deep-blue);
-    font-size: 2rem;
-    margin-bottom: 40px;
-}
-
-.grid-icons {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 30px;
-}
+/* --- GRID E CARDS --- */
+.quick-access { background-color: var(--white); padding: 60px 0; text-align: center; border-top: 1px solid #eee; }
+.section-title { color: var(--deep-blue); font-size: 2rem; margin-bottom: 40px; }
+.grid-icons { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px; }
 
 .card {
-    padding: 40px 20px;
-    border: 1px solid rgba(0,0,0,0.05); /* Borda super sutil */
-    border-radius: 4px;
-    background-color: var(--off-white);
-    transition: 0.4s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    padding: 0 0 30px 0;
+    border: 1px solid rgba(0,0,0,0.05); border-radius: 6px;
+    background-color: var(--off-white); transition: 0.4s;
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    overflow: hidden;
+}
+.card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(14, 77, 100, 0.1); background-color: var(--white); }
+
+/* --- A MÁGICA DAS FOTOS (Isso conserta o guia) --- */
+.card-image {
+    width: 100%; height: 160px; object-fit: cover; /* Corta a foto para caber */
+    border-bottom: 3px solid var(--sand); margin-bottom: 20px;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(14, 77, 100, 0.1); /* Sombra azulada suave */
-    border-color: var(--sand);
-    background-color: var(--white);
-}
+/* Ajuste para cards que só têm ícones */
+.card-padding-icon { padding-top: 40px; } 
+.icon-svg { width: 35px; height: 35px; stroke: var(--deep-blue); fill: none; stroke-width: 1.5; margin-bottom: 15px; }
 
-/* Estilo dos ícones SVG */
-.icon-svg {
-    width: 40px;
-    height: 40px;
-    stroke: var(--deep-blue); /* Cor do traço */
-    fill: none;
-    stroke-width: 1.5; /* Traço fino elegante */
-    margin-bottom: 20px;
-}
+.card h3 { margin-bottom: 8px; color: var(--deep-blue); font-size: 1.1rem; padding: 0 15px; }
+.card p { font-size: 0.85rem; color: var(--charcoal); opacity: 0.8; padding: 0 15px; }
 
-.card h3 {
-    margin-bottom: 10px;
-    color: var(--deep-blue);
-    font-size: 1.2rem;
-}
+footer { background-color: var(--sand); color: var(--deep-blue); text-align: center; padding: 30px 0; margin-top: 40px; }
 
-.card p {
-    font-size: 0.9rem;
-    color: var(--charcoal);
-    opacity: 0.8;
-}
-
-/* Footer */
-footer {
-    background-color: var(--sand); /* Fundo areia conforme pedido */
-    color: var(--deep-blue);
-    text-align: center;
-    padding: 40px 0;
-    margin-top: 40px;
-}
-
-/* --- MOBILE --- */
 @media (max-width: 768px) {
     .header-content { flex-direction: column; gap: 15px; }
-    
-    .hero-header { padding: 40px 20px; }
-    .hero-header h1 { font-size: 2.2rem; }
-    
-    .intro { flex-direction: column; padding: 0 20px 40px 20px; text-align: center; }
+    nav ul { flex-wrap: wrap; justify-content: center; gap: 10px; }
+    nav a { background-color: var(--sand); padding: 8px 15px; border-radius: 20px; font-size: 0.7rem; }
+    nav a.active { background-color: var(--deep-blue); color: var(--white); }
+    .intro { flex-direction: column; text-align: center; }
     .address { text-align: left; }
-    
-    nav ul { 
-        flex-wrap: wrap; 
-        justify-content: center; 
-        gap: 10px; 
-    }
-    
-    nav a {
-        background-color: var(--sand);
-        padding: 8px 15px;
-        border-radius: 20px;
-        font-size: 0.7rem;
-    }
-    
-    nav a.active {
-        background-color: var(--deep-blue);
-        color: var(--white);
-    }
 }
