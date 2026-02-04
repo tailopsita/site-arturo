@@ -1,8 +1,8 @@
 /* --- CORES E VARIÁVEIS (Identidade Tropical Chic) --- */
 :root {
-    --tropical-teal: #1F5E56;   /* Verde Turquesa Escuro */
-    --warm-gold: #C69C6D;       /* Dourado Fosco */
-    --sand-bg: #FAF9F6;         /* Fundo Areia */
+    --tropical-teal: #1F5E56;
+    --warm-gold: #C69C6D;
+    --sand-bg: #FAF9F6;
     --pure-white: #FFFFFF;
     --text-grey: #4A4A4A;
     --light-border: #E5E5E5;
@@ -20,11 +20,7 @@ body {
 }
 
 /* Tipografia */
-h1, h2, h3, .logo { 
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-}
-
+h1, h2, h3, .logo { font-family: 'Playfair Display', serif; font-weight: 700; }
 a { text-decoration: none; color: inherit; transition: 0.3s; }
 .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
@@ -36,94 +32,15 @@ header {
     position: sticky; top: 0; z-index: 1000;
 }
 .header-content { display: flex; justify-content: space-between; align-items: center; }
-
-.logo { 
-    font-size: 1.4rem; 
-    color: var(--tropical-teal); 
-    letter-spacing: -0.5px;
-    font-style: italic;
-}
-
+.logo { font-size: 1.4rem; color: var(--tropical-teal); letter-spacing: -0.5px; font-style: italic; }
 nav ul { display: flex; list-style: none; gap: 25px; }
-
-nav a { 
-    color: var(--text-grey); 
-    font-size: 0.7rem; 
-    text-transform: uppercase; 
-    letter-spacing: 1.5px;
-    font-weight: 600; 
-    padding: 5px 0; 
-}
-
-nav a:hover, nav a.active { 
-    color: var(--warm-gold); 
-    border-bottom: 2px solid var(--warm-gold); 
-}
+nav a { color: var(--text-grey); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600; padding: 5px 0; }
+nav a:hover, nav a.active { color: var(--warm-gold); border-bottom: 2px solid var(--warm-gold); }
 
 /* --- HERO --- */
 .hero-header { text-align: center; padding: 60px 20px 40px 20px; }
-.hero-header h1 { 
-    font-size: 2.8rem; 
-    color: var(--tropical-teal); 
-    margin-bottom: 10px; 
-    line-height: 1.2;
-}
-.subtitle { 
-    font-size: 1rem; 
-    color: var(--warm-gold); 
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-}
-
-/* --- INTRO --- */
-.intro { padding: 20px 20px 80px 20px; display: flex; align-items: center; gap: 60px; }
-.intro-img img { 
-    width: 100%; 
-    border-radius: 8px; 
-    box-shadow: 20px 20px 0px rgba(198, 156, 109, 0.2); 
-}
-.intro-text h2 { font-size: 2.2rem; margin-bottom: 20px; color: var(--tropical-teal); }
-.address { 
-    display: block; margin-top: 25px; padding: 15px; 
-    background: var(--pure-white); border-left: 4px solid var(--warm-gold); 
-    font-size: 0.9rem; font-style: italic; color: #8D5524;
-}
-
-/* --- BOTÕES GERAIS --- */
-.btn {
-    display: inline-block; 
-    background-color: var(--tropical-teal); 
-    color: var(--pure-white);
-    padding: 16px 40px; 
-    border-radius: 50px;
-    font-size: 0.85rem; 
-    text-transform: uppercase;
-    letter-spacing: 1px; 
-    font-weight: 700; 
-    margin-top: 30px; 
-    border: 2px solid var(--tropical-teal);
-    box-shadow: 0 4px 15px rgba(31, 94, 86, 0.3);
-}
-.btn:hover { background-color: transparent; color: var(--tropical-teal); }
-
-/* --- BANNER WI-FI --- */
-.wifi-banner {
-    background: linear-gradient(135deg, var(--tropical-teal), #2A7A70);
-    color: var(--pure-white);
-    padding: 25px;
-    border-radius: 12px; 
-    margin-bottom: 50px; text-align: center;
-    max-width: 400px; margin-left: auto; margin-right: auto;
-    box-shadow: 0 10px 25px rgba(31, 94, 86, 0.2);
-}
-.wifi-banner h2 { font-size: 1.4rem; margin-bottom: 5px; color: var(--pure-white); }
-.wifi-password-box {
-    background: rgba(255,255,255,0.15); padding: 8px 20px; 
-    margin-top: 15px; border-radius: 50px; display: inline-block;
-    border: 1px solid rgba(255,255,255,0.3);
-}
+.hero-header h1 { font-size: 2.8rem; color: var(--tropical-teal); margin-bottom: 10px; line-height: 1.2; }
+.subtitle { font-size: 1rem; color: var(--warm-gold); font-family: 'Montserrat', sans-serif; font-weight: 500; text-transform: uppercase; letter-spacing: 3px; }
 
 /* --- GRID E CARDS --- */
 .section-title { color: var(--tropical-teal); font-size: 2rem; margin-bottom: 40px; text-align: center; }
@@ -131,7 +48,7 @@ nav a:hover, nav a.active {
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
     gap: 30px; 
-    align-items: stretch; /* Garante que todos tenham a mesma altura */
+    align-items: stretch; 
 }
 
 .card {
@@ -141,11 +58,11 @@ nav a:hover, nav a.active {
     background-color: var(--pure-white); 
     transition: 0.4s;
     display: flex; 
-    flex-direction: column; 
+    flex-direction: column; /* Organiza itens em coluna */
     align-items: center; 
     text-align: center;
     overflow: hidden;
-    height: 100%; /* Ocupa altura total do grid */
+    height: 100%; /* Ocupa toda altura disponível */
     box-shadow: 0 5px 15px rgba(0,0,0,0.03);
 }
 .card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.08); border-color: var(--warm-gold); }
@@ -157,31 +74,47 @@ nav a:hover, nav a.active {
     filter: brightness(0.98);
 }
 
-/* Ícones SVG e Texto */
-.card-padding-icon { padding-top: 45px; } 
-.icon-svg { width: 40px; height: 40px; stroke: var(--warm-gold); fill: none; stroke-width: 1.5; margin-bottom: 20px; }
-.icon-svg-large { width: 45px; height: 45px; stroke: var(--warm-gold); fill: none; stroke-width: 1.2; margin-bottom: 20px; }
-
-.card h3 { margin-bottom: 10px; color: var(--tropical-teal); font-size: 1.15rem; padding: 0 15px; }
-.card p { 
-    font-size: 0.85rem; color: #666; padding: 0 20px; font-weight: 300; 
-    margin-bottom: 20px; flex-grow: 1; /* Empurra os botões para o final */
+/* Tipografia do Card */
+.card h3 { 
+    margin-bottom: 10px; 
+    color: var(--tropical-teal); 
+    font-size: 1.15rem; 
+    padding: 0 15px; 
 }
 
-/* --- BOTÕES DE AÇÃO DOS CARDS (Correção) --- */
+/* CORREÇÃO DO TEXTO AQUI: */
+.card p { 
+    font-size: 0.85rem; 
+    color: #666; 
+    padding: 0 20px; 
+    font-weight: 300; 
+    margin-bottom: 20px; 
+    /* Removemos o flex-grow que esticava o texto */
+}
+
+/* Endereço destacado */
+.card em {
+    display: block;
+    margin-top: 8px;
+    font-style: normal;
+    color: var(--warm-gold);
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+
+/* Botões colados no fundo */
 .card-actions {
     display: flex;
     gap: 10px;
-    margin-top: auto; /* Cola no fundo do card */
+    margin-top: auto; /* Isso empurra o botão para o fundo do card */
     padding: 0 20px;
     justify-content: center;
     width: 100%;
 }
 
+/* Estilo do Botão Mapa (que você gostou) */
 .btn-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; align-items: center; justify-content: center;
     width: 35px; height: 35px;
     border-radius: 50%;
     border: 1px solid var(--warm-gold);
@@ -191,7 +124,7 @@ nav a:hover, nav a.active {
 .btn-icon:hover { background-color: var(--warm-gold); color: white; }
 .btn-icon svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; }
 
-/* Listas */
+/* Listas Limpas (Serviços) */
 .clean-list { list-style: none; padding: 0 10px; text-align: left; font-size: 0.9rem; color: #555; }
 .clean-list li { margin-bottom: 15px; display: flex; align-items: flex-start; gap: 12px; line-height: 1.5; }
 .list-icon { min-width: 20px; width: 20px; height: 20px; stroke: var(--tropical-teal); stroke-width: 2; fill: none; margin-top: 2px; }
@@ -205,6 +138,4 @@ footer { background-color: var(--pure-white); border-top: 1px solid var(--light-
     nav a { background-color: #F0F0F0; padding: 8px 16px; border-radius: 4px; font-size: 0.7rem; }
     nav a.active { background-color: var(--tropical-teal); color: var(--pure-white); }
     .hero-header h1 { font-size: 2.2rem; }
-    .intro { flex-direction: column; text-align: center; padding: 20px; gap: 30px; }
-    .address { text-align: left; }
 }
