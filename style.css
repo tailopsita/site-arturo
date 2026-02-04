@@ -1,8 +1,8 @@
 /* --- CORES E VARIÁVEIS (Identidade Tropical Chic) --- */
 :root {
-    --tropical-teal: #1F5E56;
-    --warm-gold: #C69C6D;
-    --sand-bg: #FAF9F6;
+    --tropical-teal: #1F5E56;   /* Verde Turquesa Escuro */
+    --warm-gold: #C69C6D;       /* Dourado Fosco */
+    --sand-bg: #FAF9F6;         /* Fundo Areia */
     --pure-white: #FFFFFF;
     --text-grey: #4A4A4A;
     --light-border: #E5E5E5;
@@ -42,6 +42,35 @@ nav a:hover, nav a.active { color: var(--warm-gold); border-bottom: 2px solid va
 .hero-header h1 { font-size: 2.8rem; color: var(--tropical-teal); margin-bottom: 10px; line-height: 1.2; }
 .subtitle { font-size: 1rem; color: var(--warm-gold); font-family: 'Montserrat', sans-serif; font-weight: 500; text-transform: uppercase; letter-spacing: 3px; }
 
+/* --- INTRO (Home) --- */
+.intro { padding: 20px 20px 80px 20px; display: flex; align-items: center; gap: 60px; }
+.intro-img img { width: 100%; border-radius: 8px; box-shadow: 20px 20px 0px rgba(198, 156, 109, 0.2); }
+.intro-text h2 { font-size: 2.2rem; margin-bottom: 20px; color: var(--tropical-teal); }
+.address { display: block; margin-top: 25px; padding: 15px; background: var(--pure-white); border-left: 4px solid var(--warm-gold); font-size: 0.9rem; font-style: italic; color: #8D5524; }
+
+/* --- BOTÕES --- */
+.btn {
+    display: inline-block; background-color: var(--tropical-teal); color: var(--pure-white);
+    padding: 16px 40px; border-radius: 50px; font-size: 0.85rem; text-transform: uppercase;
+    letter-spacing: 1px; font-weight: 700; margin-top: 30px; border: 2px solid var(--tropical-teal);
+    box-shadow: 0 4px 15px rgba(31, 94, 86, 0.3);
+}
+.btn:hover { background-color: transparent; color: var(--tropical-teal); }
+
+/* --- BANNER WI-FI --- */
+.wifi-banner {
+    background: linear-gradient(135deg, var(--tropical-teal), #2A7A70);
+    color: var(--pure-white); padding: 25px; border-radius: 12px; 
+    margin-bottom: 50px; text-align: center; max-width: 400px; margin-left: auto; margin-right: auto;
+    box-shadow: 0 10px 25px rgba(31, 94, 86, 0.2);
+}
+.wifi-banner h2 { font-size: 1.4rem; margin-bottom: 5px; color: var(--pure-white); }
+.wifi-password-box {
+    background: rgba(255,255,255,0.15); padding: 8px 20px; 
+    margin-top: 15px; border-radius: 50px; display: inline-block;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
 /* --- GRID E CARDS --- */
 .section-title { color: var(--tropical-teal); font-size: 2rem; margin-bottom: 40px; text-align: center; }
 .grid-icons { 
@@ -57,12 +86,9 @@ nav a:hover, nav a.active { color: var(--warm-gold); border-bottom: 2px solid va
     border-radius: 8px;
     background-color: var(--pure-white); 
     transition: 0.4s;
-    display: flex; 
-    flex-direction: column; /* Organiza itens em coluna */
-    align-items: center; 
-    text-align: center;
+    display: flex; flex-direction: column; align-items: center; text-align: center;
     overflow: hidden;
-    height: 100%; /* Ocupa toda altura disponível */
+    height: 100%; 
     box-shadow: 0 5px 15px rgba(0,0,0,0.03);
 }
 .card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.08); border-color: var(--warm-gold); }
@@ -74,45 +100,30 @@ nav a:hover, nav a.active { color: var(--warm-gold); border-bottom: 2px solid va
     filter: brightness(0.98);
 }
 
-/* Tipografia do Card */
-.card h3 { 
-    margin-bottom: 10px; 
-    color: var(--tropical-teal); 
-    font-size: 1.15rem; 
-    padding: 0 15px; 
-}
+/* Tipografia Card */
+.card h3 { margin-bottom: 10px; color: var(--tropical-teal); font-size: 1.15rem; padding: 0 15px; }
+.card p { font-size: 0.85rem; color: #666; padding: 0 20px; font-weight: 300; margin-bottom: 20px; }
+.card em { display: block; margin-top: 8px; font-style: normal; color: var(--warm-gold); font-weight: 500; font-size: 0.8rem; }
 
-/* CORREÇÃO DO TEXTO AQUI: */
-.card p { 
-    font-size: 0.85rem; 
-    color: #666; 
-    padding: 0 20px; 
-    font-weight: 300; 
+/* --- ÍCONES SVG (A CORREÇÃO DO INÍCIO ESTÁ AQUI) --- */
+.card-padding-icon { padding-top: 45px; } 
+
+/* Esta classe controla o tamanho dos ícones na Home e Internas */
+.icon-svg { 
+    width: 50px; /* Tamanho fixo para não ficar gigante */
+    height: 50px; 
+    stroke: var(--warm-gold); /* Cor da linha */
+    fill: none; /* Sem preenchimento preto */
+    stroke-width: 1.5; 
     margin-bottom: 20px; 
-    /* Removemos o flex-grow que esticava o texto */
+    display: block; /* Garante que ocupe linha própria */
+    margin-left: auto; margin-right: auto;
 }
 
-/* Endereço destacado */
-.card em {
-    display: block;
-    margin-top: 8px;
-    font-style: normal;
-    color: var(--warm-gold);
-    font-weight: 500;
-    font-size: 0.8rem;
-}
-
-/* Botões colados no fundo */
+/* --- BOTÕES DOS CARDS (MAPA) --- */
 .card-actions {
-    display: flex;
-    gap: 10px;
-    margin-top: auto; /* Isso empurra o botão para o fundo do card */
-    padding: 0 20px;
-    justify-content: center;
-    width: 100%;
+    display: flex; gap: 10px; margin-top: auto; padding: 0 20px; justify-content: center; width: 100%;
 }
-
-/* Estilo do Botão Mapa (que você gostou) */
 .btn-icon {
     display: flex; align-items: center; justify-content: center;
     width: 35px; height: 35px;
@@ -124,7 +135,7 @@ nav a:hover, nav a.active { color: var(--warm-gold); border-bottom: 2px solid va
 .btn-icon:hover { background-color: var(--warm-gold); color: white; }
 .btn-icon svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; }
 
-/* Listas Limpas (Serviços) */
+/* Listas */
 .clean-list { list-style: none; padding: 0 10px; text-align: left; font-size: 0.9rem; color: #555; }
 .clean-list li { margin-bottom: 15px; display: flex; align-items: flex-start; gap: 12px; line-height: 1.5; }
 .list-icon { min-width: 20px; width: 20px; height: 20px; stroke: var(--tropical-teal); stroke-width: 2; fill: none; margin-top: 2px; }
@@ -138,4 +149,6 @@ footer { background-color: var(--pure-white); border-top: 1px solid var(--light-
     nav a { background-color: #F0F0F0; padding: 8px 16px; border-radius: 4px; font-size: 0.7rem; }
     nav a.active { background-color: var(--tropical-teal); color: var(--pure-white); }
     .hero-header h1 { font-size: 2.2rem; }
+    .intro { flex-direction: column; text-align: center; padding: 20px; gap: 30px; }
+    .address { text-align: left; }
 }
