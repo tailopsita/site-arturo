@@ -1,80 +1,149 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Casa Nascimento 375 | Ipanema</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
-</head>
-<body>
+/* Reset básico */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-    <header>
-        <div class="container header-content">
-            <div class="logo">Casa Nascimento 375</div>
-            <nav>
-                <ul>
-                    <li><a href="index.html" class="active">Início</a></li>
-                    <li><a href="#">O Apartamento</a></li> <li><a href="#">Guia do Bairro</a></li> <li><a href="#">Check-in</a></li> </ul>
-            </nav>
-        </div>
-    </header>
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #FDFBF7;
+    color: #333;
+    line-height: 1.6;
+    padding-bottom: 20px; /* Espaço extra no final pro celular */
+}
 
-    <section class="hero">
-        <div class="hero-text">
-            <h1>Guia de Boas-Vindas</h1>
-            <p>Elegância e Bossa em Ipanema</p>
-            <a href="#intro" class="btn">Começar</a>
-        </div>
-    </section>
+/* Tipografia e Layout */
+h1, h2, h3, .logo { font-family: 'Playfair Display', serif; }
+a { text-decoration: none; color: inherit; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
-    <section id="intro" class="container intro">
-        <div class="intro-img">
-            <img src="https://placehold.co/400x500?text=Foto+do+Anfitrião+ou+Sala" alt="Anfitrião Arturo">
-        </div>
-        <div class="intro-text">
-            <h2>Seja Bem-vindo!</h2>
-            <p>Olá! [cite_start]Eu sou o <strong>Arturo</strong>, anfitrião da Casa Nascimento 375[cite: 8]. É um prazer recebê-lo em nosso destino!</p>
-            [cite_start]<p>Estou aqui para garantir que sua estadia seja simplesmente incrível[cite: 9]. Preparei este guia digital para ajudar você a se sentir em casa e aproveitar o melhor do Rio.</p>
-            [cite_start]<p><em>Rua Nascimento Silva, 375 - Ipanema, Rio de Janeiro [cite: 6]</em></p>
-        </div>
-    </section>
+/* --- CABEÇALHO (Onde a mágica acontece) --- */
+header {
+    background-color: #fff;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky; /* Menu cola no topo */
+    top: 0;
+    z-index: 1000;
+}
 
-    <section class="quick-access">
-        <div class="container">
-            <h2>O que você precisa agora?</h2>
-            <div class="grid-icons">
-                <a href="#" class="card">
-                    <span class="icon">🔑</span>
-                    <h3>Check-in & Check-out</h3>
-                    [cite_start]<p>Horários e instruções [cite: 17]</p>
-                </a>
-                <a href="#" class="card">
-                    <span class="icon">📶</span>
-                    <h3>Wi-Fi</h3>
-                    [cite_start]<p>Senha e conexão [cite: 19]</p>
-                </a>
-                <a href="#" class="card">
-                    <span class="icon">🛋️</span>
-                    <h3>O Apartamento</h3>
-                    [cite_start]<p>Regras e amenidades [cite: 20]</p>
-                </a>
-                <a href="#" class="card">
-                    <span class="icon">🏖️</span>
-                    <h3>Guia Local</h3>
-                    [cite_start]<p>Restaurantes e passeios [cite: 30]</p>
-                </a>
-            </div>
-        </div>
-    </section>
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-    <footer>
-        <div class="container">
-            <p><strong>Casa Nascimento 375</strong></p>
-            [cite_start]<p>Contato de Emergência: (53) 99998-7383 [cite: 370]</p>
-            [cite_start]<p>Email: casanascimento375@yahoo.com [cite: 371]</p>
-        </div>
-    </footer>
+.logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2C3E50;
+}
 
-</body>
-</html>
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+nav a {
+    color: #555;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    padding: 5px 0; /* Aumenta a área de toque */
+    display: block;
+}
+
+nav a:hover, nav a.active {
+    color: #008080;
+    border-bottom: 2px solid #008080;
+}
+
+/* Título e Intro */
+.main-title { text-align: center; padding: 30px 0 10px 0; }
+.main-title h1 { font-size: 2.2rem; color: #2C3E50; }
+.subtitle { color: #666; font-style: italic; font-family: 'Playfair Display', serif; }
+
+.intro { padding: 30px 20px; display: flex; align-items: center; gap: 40px; }
+.intro-img img { width: 100%; border-radius: 10px; box-shadow: 5px 5px 0px #e0ddd5; }
+.intro-text h2 { font-size: 1.8rem; margin-bottom: 15px; color: #2C3E50; }
+.address { display: block; margin-top: 20px; padding: 10px; background: #fff; border-left: 4px solid #008080; font-size: 0.85rem; }
+
+/* Botão Principal */
+.btn {
+    display: inline-block;
+    background-color: #008080;
+    color: #fff;
+    padding: 15px 30px; /* Botão gordo para celular */
+    border-radius: 50px;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Grid de Ícones */
+.quick-access { background-color: #fff; padding: 40px 0; text-align: center; margin-top: 30px; }
+.grid-icons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adapta para telas pequenas */
+    gap: 15px;
+}
+
+.card {
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    background-color: #FDFBF7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 140px; /* Altura mínima para ficar bonito */
+}
+.icon { font-size: 2rem; margin-bottom: 10px; }
+.card h3 { font-size: 1rem; color: #2C3E50; }
+.card p { font-size: 0.8rem; color: #666; display: none; } /* Esconde descrição no celular para limpar o visual, aparece no desktop via media query abaixo */
+
+footer { background-color: #2C3E50; color: #fff; text-align: center; padding: 30px 0; margin-top: 30px;}
+
+/* --- AJUSTES PARA CELULAR (Mobile First) --- */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .logo { font-size: 1.4rem; margin-bottom: 5px; }
+
+    /* Menu no celular: vira botões fáceis de tocar */
+    nav ul {
+        flex-wrap: wrap; /* Permite quebrar linha se não couber */
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+    }
+
+    nav a {
+        background-color: #f0f0f0;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-size: 0.75rem; /* Letra menor para caber */
+        border-bottom: none; /* Remove a linha padrão */
+    }
+
+    nav a.active {
+        background-color: #008080;
+        color: white;
+        border: none;
+    }
+
+    .intro { flex-direction: column; padding: 20px; }
+    .main-title h1 { font-size: 1.8rem; }
+    
+    /* No celular, mostra a descrição curta dos ícones se houver espaço, se não, só título */
+    .card p { display: block; margin-top: 5px;} 
+}
+
+/* Ajuste fino para telas maiores que celular */
+@media (min-width: 769px) {
+    .card p { display: block; }
+}
