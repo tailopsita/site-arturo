@@ -219,3 +219,41 @@ footer {
     .intro-img img { box-shadow: 10px 10px 0px rgba(198, 156, 109, 0.2); }
     .address { text-align: left; }
 }
+
+/* --- BOTÕES DOS CARDS (Mapas e Avaliações) --- */
+.card-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    width: 100%;
+    padding: 0 20px;
+    justify-content: center;
+}
+
+.btn-card {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 8px 15px;
+    border: 1px solid var(--warm-gold);
+    border-radius: 4px;
+    color: var(--warm-gold);
+    transition: 0.3s;
+    background: transparent;
+}
+
+.btn-card:hover {
+    background-color: var(--warm-gold);
+    color: var(--pure-white);
+}
+
+.btn-card svg {
+    width: 14px;
+    height: 14px;
+    stroke: currentColor; /* Pega a cor do texto */
+    fill: none;
+    stroke-width: 2;
+}
