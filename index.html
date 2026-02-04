@@ -2,9 +2,10 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Casa Nascimento 375 | Ipanema</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Nascimento 375 | Ipanema</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -22,7 +23,7 @@
         </div>
     </header>
 
-    <div class="main-title">
+    <div class="hero-header">
         <div class="container">
             <h1>Guia de Boas-Vindas</h1>
             <p class="subtitle">Elegância e Bossa em Ipanema</p>
@@ -31,13 +32,13 @@
 
     <section id="intro" class="container intro">
         <div class="intro-img">
-            <img src="https://placehold.co/500x400?text=Foto+Sala+ou+Anfitrião" alt="Anfitrião Arturo">
+            <img src="https://placehold.co/600x450/E6DACE/0E4D64?text=Foto+Sala+ou+Anfitrião" alt="Anfitrião Arturo">
         </div>
         <div class="intro-text">
             <h2>Seja Bem-vindo!</h2>
             <p>Olá! Eu sou o <strong>Arturo</strong>, anfitrião da Casa Nascimento 375. É um prazer recebê-lo em nosso destino!</p>
-            <p>Estou aqui para garantir que sua estadia seja simplesmente incrível. Preparei este guia digital para ajudar você a se sentir em casa.</p>
-            <p class="address"><em>📍 Rua Nascimento Silva, 375 - Ipanema</em></p>
+            <p>Estou aqui para garantir que sua estadia seja simplesmente incrível. Preparei este guia digital para ajudar você a se sentir em casa e aproveitar o melhor do Rio.</p>
+            <p class="address"><em>📍 Rua Nascimento Silva, 375 - Ipanema, Rio de Janeiro</em></p>
             
             <a href="checkin.html" class="btn">Ver Check-in e Senhas</a>
         </div>
@@ -46,26 +47,48 @@
     <section class="quick-access">
         <div class="container">
             <h2>O que você precisa agora?</h2>
-            <p style="margin-bottom: 30px; font-size: 0.9rem;">Toque nos cartões abaixo para acessar:</p>
             
             <div class="grid-icons">
                 <a href="checkin.html" class="card">
-                    <span class="icon">🔑</span>
+                    <svg class="icon-svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path>
+                    </svg>
                     <h3>Check-in</h3>
                     <p>Horários e instruções</p>
                 </a>
+                
                 <a href="apartamento.html" class="card">
-                    <span class="icon">📶</span>
+                    <svg class="icon-svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+                        <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+                        <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                        <line x1="12" y1="20" x2="12.01" y2="20"></line>
+                    </svg>
                     <h3>Wi-Fi</h3>
                     <p>Senha e conexão</p>
                 </a>
+                
                 <a href="apartamento.html" class="card">
-                    <span class="icon">🛋️</span>
+                    <svg class="icon-svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
                     <h3>A Casa</h3>
                     <p>Regras e amenidades</p>
                 </a>
+                
                 <a href="guia.html" class="card">
-                    <span class="icon">🏖️</span>
+                    <svg class="icon-svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
                     <h3>Guia Local</h3>
                     <p>Dicas de Ipanema</p>
                 </a>
