@@ -98,52 +98,52 @@ nav a:hover, nav a.active { color: var(--warm-gold); }
     position: absolute; left: 0; top: -5px;
 }
 
-/* Imagens Únicas */
-.room-img { flex: 1.2; }
-.room-img img {
-    width: 100%; height: 450px; object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 15px 15px 0px rgba(198, 156, 109, 0.2);
-    transition: transform 0.3s ease;
-}
-.room-img img:hover { transform: scale(1.01); }
+/* --- CONFIGURAÇÃO DE IMAGENS E ZOOM --- */
 
-/* Grid para 2 Imagens (Banheiros/Salas) */
+/* Containers (Caixas) das Imagens - Seguram o zoom dentro da borda */
+.room-img, .room-img-grid, .room-img-grid-3 {
+    border-radius: 8px;
+    overflow: hidden; /* IMPORTANTE: Impede que a imagem saia da caixa ao dar zoom */
+    box-shadow: 10px 10px 0px rgba(198, 156, 109, 0.15);
+}
+
+/* Configuração Geral das Imagens */
+.room-img img, .room-img-grid img, .room-img-grid-3 img {
+    width: 100%;
+    object-fit: cover; /* Corta a imagem para caber sem distorcer */
+    transition: transform 0.5s ease; /* Suavidade do zoom */
+    display: block; 
+}
+
+/* Alturas Específicas */
+.room-img { flex: 1.2; }
+.room-img img { height: 450px; }
+
+/* Grid para 2 Imagens */
 .room-img-grid {
     flex: 1.2;
     display: grid; grid-template-columns: 1fr 1fr; gap: 15px;
 }
-.room-img-grid img {
-    width: 100%; height: 450px; object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 10px 10px 0px rgba(198, 156, 109, 0.15);
-}
+.room-img-grid img { height: 450px; }
 
-/* --- GRADE DE 3 IMAGENS (QUARTOS - CORREÇÃO IMPORTANTE) --- */
+/* Grid para 3 Imagens (Quartos) */
 .room-img-grid-3 {
-    flex: 1.5; /* Ocupa um pouco mais de espaço */
+    flex: 1.5;
     display: grid;
-    /* 3 colunas iguais */
     grid-template-columns: repeat(3, 1fr); 
     gap: 15px;
 }
+.room-img-grid-3 img { height: 300px; } /* Altura menor para grid de 3 */
 
-.room-img-grid-3 img {
-    width: 100%;
-    /* FORÇA ALTURA IGUAL PARA TODAS */
-    height: 300px; 
-    object-fit: cover; /* Corta o excesso para não deformar */
-    border-radius: 8px;
-    box-shadow: 10px 10px 0px rgba(198, 156, 109, 0.15);
-    transition: transform 0.3s ease;
+/* EFEITO DE ZOOM AO PASSAR O MOUSE */
+.room-img:hover img, 
+.room-img-grid:hover img, 
+.room-img-grid-3:hover img {
+    transform: scale(1.15); /* Aumenta 15% */
+    cursor: pointer;
 }
 
-.room-img-grid-3 img:hover {
-    transform: scale(1.05);
-    z-index: 2;
-}
-
-/* --- SEÇÃO DE AMENIDADES (CORREÇÃO DOS ÍCONES) --- */
+/* --- SEÇÃO DE AMENIDADES --- */
 .amenities-section {
     background-color: var(--pure-white);
     padding: 60px 40px;
@@ -170,7 +170,7 @@ nav a:hover, nav a.active { color: var(--warm-gold); }
     font-weight: 500;
 }
 
-/* CORREÇÃO DO TAMANHO DO ÍCONE */
+/* ÍCONES AMENIDADES (Tamanho Fixo) */
 .amenity-icon {
     width: 25px !important;  
     height: 25px !important;
