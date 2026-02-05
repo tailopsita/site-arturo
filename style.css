@@ -1,13 +1,12 @@
-/* --- CORES E VARIÁVEIS (Identidade Tropical Chic) --- */
+/* --- CORES E VARIÁVEIS --- */
 :root {
-    --tropical-teal: #1F5E56;   /* Verde Turquesa Escuro */
-    --warm-gold: #C69C6D;       /* Dourado Fosco */
-    --sand-bg: #FAF9F6;         /* Fundo Areia */
+    --tropical-teal: #1F5E56;
+    --warm-gold: #C69C6D;
+    --sand-bg: #FAF9F6;
     --pure-white: #FFFFFF;
     --text-grey: #4A4A4A;
     --light-border: #E5E5E5;
     
-    /* Fontes */
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Montserrat', sans-serif;
 }
@@ -41,7 +40,6 @@ nav ul { display: flex; list-style: none; gap: 20px; align-items: center; }
 nav a { color: var(--text-grey); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; padding: 5px 0; }
 nav a:hover, nav a.active { color: var(--warm-gold); }
 
-/* Botão Airbnb no Menu */
 .btn-airbnb {
     background-color: var(--warm-gold);
     color: var(--pure-white) !important;
@@ -58,24 +56,17 @@ nav a:hover, nav a.active { color: var(--warm-gold); }
     transform: scale(1.05);
 }
 
-/* --- HERO --- */
+/* --- HERO & INTRO --- */
 .hero-header { text-align: center; padding: 60px 20px 40px 20px; }
 .hero-header h1 { font-size: 2.8rem; color: var(--tropical-teal); margin-bottom: 10px; line-height: 1.2; }
 .subtitle { font-size: 1rem; color: var(--warm-gold); font-family: var(--font-body); font-weight: 500; text-transform: uppercase; letter-spacing: 3px; }
 
-/* --- INTRO (Home) --- */
 .intro { padding: 20px 20px 80px 20px; display: flex; align-items: center; gap: 60px; }
-.intro-img img { 
-    width: 100%; 
-    border-radius: 8px; 
-    box-shadow: 20px 20px 0px rgba(198, 156, 109, 0.2);
-    max-height: 400px;
-    object-fit: cover;
-}
+.intro-img img { width: 100%; border-radius: 8px; box-shadow: 20px 20px 0px rgba(198, 156, 109, 0.2); max-height: 400px; object-fit: cover; }
 .intro-text h2 { font-size: 2.2rem; margin-bottom: 20px; color: var(--tropical-teal); }
 .address { display: block; margin-top: 25px; padding: 15px; background: var(--pure-white); border-left: 4px solid var(--warm-gold); font-size: 0.9rem; font-style: italic; color: #8D5524; }
 
-/* --- SEÇÕES DO APARTAMENTO (Zig-Zag) --- */
+/* --- SEÇÕES DO APARTAMENTO --- */
 .room-section {
     display: flex;
     align-items: center;
@@ -83,94 +74,112 @@ nav a:hover, nav a.active { color: var(--warm-gold); }
     margin-bottom: 100px;
     padding-top: 20px;
 }
-/* Inverte a ordem: Texto na Direita, Foto na Esquerda */
 .room-section.reverse { flex-direction: row-reverse; }
 
 .room-text { flex: 1; }
 .room-text h2 { color: var(--tropical-teal); font-size: 2.2rem; margin-bottom: 20px; }
 .room-text p { font-size: 1.05rem; color: #666; margin-bottom: 20px; }
 
-/* Lista de características (bullets) */
 .room-features { list-style: none; margin-top: 20px; }
 .room-features li { margin-bottom: 12px; padding-left: 25px; position: relative; font-size: 0.95rem; }
-.room-features li::before {
-    content: "•"; color: var(--warm-gold); font-weight: bold; font-size: 1.5rem;
-    position: absolute; left: 0; top: -5px;
-}
+.room-features li::before { content: "•"; color: var(--warm-gold); font-weight: bold; font-size: 1.5rem; position: absolute; left: 0; top: -5px; }
 
-/* --- CONFIGURAÇÃO DE IMAGENS E ZOOM --- */
-
-/* Containers (Caixas) das Imagens - Seguram o zoom dentro da borda */
-.room-img, .room-img-grid, .room-img-grid-3 {
-    border-radius: 8px;
-    overflow: hidden; /* IMPORTANTE: Impede que a imagem saia da caixa ao dar zoom */
-    box-shadow: 10px 10px 0px rgba(198, 156, 109, 0.15);
-}
-
-/* Configuração Geral das Imagens */
+/* --- IMAGENS E GRIDS --- */
+/* Configuração base para todas as imagens de cômodos */
 .room-img img, .room-img-grid img, .room-img-grid-3 img {
     width: 100%;
-    object-fit: cover; /* Corta a imagem para caber sem distorcer */
-    transition: transform 0.5s ease; /* Suavidade do zoom */
-    display: block; 
+    object-fit: cover; /* Corta para preencher o quadrado perfeitamente */
+    border-radius: 8px;
+    box-shadow: 10px 10px 0px rgba(198, 156, 109, 0.15);
+    cursor: zoom-in; /* Mostra a lupa ao passar o mouse */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Alturas Específicas */
+/* Efeito ao passar o mouse (Levanta levemente) */
+.room-img img:hover, .room-img-grid img:hover, .room-img-grid-3 img:hover {
+    transform: translateY(-5px);
+    box-shadow: 15px 15px 0px rgba(198, 156, 109, 0.25);
+}
+
+/* Layouts de Grid */
 .room-img { flex: 1.2; }
 .room-img img { height: 450px; }
 
-/* Grid para 2 Imagens */
 .room-img-grid {
     flex: 1.2;
     display: grid; grid-template-columns: 1fr 1fr; gap: 15px;
 }
 .room-img-grid img { height: 450px; }
 
-/* Grid para 3 Imagens (Quartos) */
 .room-img-grid-3 {
     flex: 1.5;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 15px;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;
 }
-.room-img-grid-3 img { height: 300px; } /* Altura menor para grid de 3 */
+.room-img-grid-3 img { height: 300px; } /* Altura menor para o trio de fotos */
 
-/* EFEITO DE ZOOM AO PASSAR O MOUSE */
-.room-img:hover img, 
-.room-img-grid:hover img, 
-.room-img-grid-3:hover img {
-    transform: scale(1.15); /* Aumenta 15% */
+
+/* --- MODAL (LIGHTBOX - A TELA CHEIA) --- */
+/* O Fundo escuro */
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed;
+    z-index: 2000; /* Fica acima de tudo */
+    padding-top: 50px;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9); /* Preto 90% transparente */
+}
+
+/* A Imagem dentro do Modal */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: auto;
+    max-width: 90%; 
+    max-height: 90vh; /* Altura máxima da tela */
+    border: 2px solid var(--warm-gold);
+    border-radius: 4px;
+}
+
+/* O botão de fechar (X) */
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
     cursor: pointer;
 }
+.close-modal:hover { color: var(--warm-gold); }
 
-/* --- SEÇÃO DE AMENIDADES --- */
+/* Animação de entrada */
+.modal-content { animation-name: zoom; animation-duration: 0.3s; }
+@keyframes zoom { from {transform:scale(0)} to {transform:scale(1)} }
+
+
+/* --- AMENIDADES --- */
 .amenities-section {
     background-color: var(--pure-white);
     padding: 60px 40px;
     border-radius: 12px;
     margin-top: 80px;
     border: 1px solid rgba(198, 156, 109, 0.2);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
 }
 
 .amenities-list {
-    display: grid;
-    /* Colunas responsivas */
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
-    gap: 25px;
-    margin-top: 30px;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+    gap: 25px; margin-top: 30px;
 }
 
 .amenity-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    color: #555;
-    font-size: 0.95rem;
-    font-weight: 500;
+    display: flex; align-items: center; gap: 15px;
+    color: #555; font-size: 0.95rem; font-weight: 500;
 }
 
-/* ÍCONES AMENIDADES (Tamanho Fixo) */
+/* ÍCONES PEQUENOS E FIXOS (Correção definitiva) */
 .amenity-icon {
     width: 25px !important;  
     height: 25px !important;
@@ -180,69 +189,35 @@ nav a:hover, nav a.active { color: var(--warm-gold); }
     stroke-width: 2;
 }
 
+
 /* --- CARDS E GERAL --- */
 .section-title { color: var(--tropical-teal); font-size: 2rem; margin-bottom: 40px; text-align: center; }
-.grid-icons { 
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
-    gap: 30px; align-items: stretch; 
-}
+.grid-icons { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; }
 .card {
-    padding: 0 0 25px 0;
-    border: 1px solid rgba(0,0,0,0.02); border-radius: 8px;
+    padding: 0 0 25px 0; border: 1px solid rgba(0,0,0,0.02); border-radius: 8px;
     background-color: var(--pure-white); 
-    transition: 0.4s; display: flex; flex-direction: column; align-items: center; text-align: center;
-    overflow: hidden; height: 100%; 
-    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03); transition: 0.4s;
 }
 .card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.08); border-color: var(--warm-gold); }
-.card-image { width: 100%; height: 180px; object-fit: cover; margin-bottom: 20px; filter: brightness(0.98); }
-.card h3 { margin-bottom: 10px; color: var(--tropical-teal); font-size: 1.15rem; padding: 0 15px; }
-.card p { font-size: 0.85rem; color: #666; padding: 0 20px; font-weight: 300; margin-bottom: 20px; }
-.card em { display: block; margin-top: 8px; font-style: normal; color: var(--warm-gold); font-weight: 500; font-size: 0.8rem; }
 .card-padding-icon { padding-top: 45px; }
-
-/* Ícones SVG Grandes (Check-in/Guia) */
-.icon-svg, .icon-svg-large { 
-    stroke: var(--warm-gold); fill: none; stroke-width: 1.5; 
-    margin-bottom: 20px; display: block; margin-left: auto; margin-right: auto;
-}
+.icon-svg, .icon-svg-large { stroke: var(--warm-gold); fill: none; stroke-width: 1.5; margin-bottom: 20px; display: block; margin-left: auto; margin-right: auto; }
 .icon-svg { width: 50px; height: 50px; }
 .icon-svg-large { width: 60px; height: 60px; }
-
-/* Botões Padrão */
-.btn {
-    display: inline-block; background-color: var(--tropical-teal); color: var(--pure-white);
-    padding: 16px 40px; border-radius: 50px; font-size: 0.85rem; text-transform: uppercase;
-    letter-spacing: 1px; font-weight: 700; margin-top: 30px; border: 2px solid var(--tropical-teal);
-    box-shadow: 0 4px 15px rgba(31, 94, 86, 0.3);
-}
-.btn:hover { background-color: transparent; color: var(--tropical-teal); }
-
-/* Listas Limpas (Checkin/Guia) */
 .clean-list { list-style: none; padding: 0 10px; text-align: left; font-size: 0.9rem; color: #555; }
-.clean-list li { margin-bottom: 15px; display: flex; align-items: flex-start; gap: 12px; line-height: 1.5; }
+.clean-list li { margin-bottom: 15px; display: flex; align-items: flex-start; gap: 12px; }
 .list-icon { min-width: 20px; width: 20px; height: 20px; stroke: var(--tropical-teal); stroke-width: 2; fill: none; margin-top: 2px; }
 
 /* Footer */
 footer { background-color: var(--pure-white); border-top: 1px solid var(--light-border); color: var(--tropical-teal); text-align: center; padding: 50px 0; margin-top: 60px; }
 
-/* Responsividade Mobile */
+/* Responsividade */
 @media (max-width: 768px) {
     .header-content { flex-direction: column; gap: 15px; }
     nav ul { flex-wrap: wrap; justify-content: center; gap: 8px; }
-    .hero-header h1 { font-size: 2.2rem; }
-    .intro { flex-direction: column; text-align: center; padding: 20px; gap: 30px; }
-    .address { text-align: left; }
-    
-    /* Layout Zig-Zag no celular */
     .room-section, .room-section.reverse { flex-direction: column; gap: 30px; margin-bottom: 60px; }
-    
-    /* Alturas das imagens no celular */
     .room-img img, .room-img-grid img { height: 300px; }
-    
-    /* Grid de 3 vira coluna única no celular */
     .room-img-grid-3 { grid-template-columns: 1fr; }
     .room-img-grid-3 img { height: 250px; }
-    
-    .amenities-section { padding: 30px 20px; }
+    .modal-content { width: 95%; }
 }
