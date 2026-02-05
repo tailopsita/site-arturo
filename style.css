@@ -185,3 +185,72 @@ footer { background-color: var(--pure-white); border-top: 1px solid var(--light-
     .room-section, .room-section.reverse { flex-direction: column; gap: 30px; margin-bottom: 60px; }
     .room-img img, .room-img-grid img { height: 300px; }
 }
+
+/* --- GRADE DE 3 IMAGENS (Para os Quartos) --- */
+.room-img-grid-3 {
+    flex: 1.5; /* Ocupa mais espaço que o texto */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas iguais */
+    gap: 10px;
+}
+
+.room-img-grid-3 img {
+    width: 100%;
+    height: 350px; /* Altura um pouco menor para caber bem */
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 10px 10px 0px rgba(198, 156, 109, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.room-img-grid-3 img:hover {
+    transform: scale(1.02);
+    z-index: 2;
+}
+
+/* --- SEÇÃO DE AMENIDADES --- */
+.amenities-section {
+    background-color: var(--pure-white);
+    padding: 60px 40px;
+    border-radius: 12px;
+    margin-top: 80px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    border: 1px solid rgba(198, 156, 109, 0.2); /* Borda dourada suave */
+}
+
+.amenities-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Responsivo */
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.amenity-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.amenity-icon {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    stroke: var(--tropical-teal);
+    fill: none;
+    stroke-width: 2;
+}
+
+/* Responsividade para grade de 3 */
+@media (max-width: 768px) {
+    .room-img-grid-3 {
+        grid-template-columns: 1fr; /* Vira 1 coluna no celular */
+    }
+    .room-img-grid-3 img {
+        height: 250px;
+    }
+    .amenities-section {
+        padding: 30px 20px;
+    }
+}
