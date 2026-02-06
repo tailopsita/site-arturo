@@ -37,7 +37,7 @@
         <div class="host-profile-container">
             <div class="host-content">
                 <h2 style="color: var(--tropical-teal); margin-bottom: 15px;">Seu Anfitrião, Arturo</h2>
-                <p style="font-style: italic; color: #666; margin-bottom: 20px;">
+                <p style="font-style: italic; color: #666; margin-bottom: 20px; line-height: 1.6;">
                     "Olá! É um prazer recebê-lo. Estou aqui para garantir que sua estadia na Casa Nascimento 375 seja simplesmente incrível, cuidando de cada detalhe com carinho e eficiência."
                 </p>
                 
@@ -52,7 +52,7 @@
                     </div>
                 </div>
                 
-                <span style="font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--warm-gold); margin-top: 20px; display: block;">Arturo Garcia</span>
+                <span style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--warm-gold); margin-top: 25px; display: block;">Arturo Garcia</span>
             </div>
             
             <div class="host-visual">
@@ -60,44 +60,67 @@
             </div>
         </div>
 
-        <div class="grid-icons" style="margin-top: 40px;">
+        <div class="grid-icons" style="margin-top: 60px;">
             
             <a href="https://www.instagram.com/casanascimento375/" target="_blank" class="card card-padding-icon" style="text-decoration: none;">
                 <svg class="icon-svg-large" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" style="stroke-width: 1;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                 <h3>Instagram</h3>
-                <p>Siga nosso dia a dia</p>
+                <p>Siga nosso dia a dia e novidades</p>
                 <em>@casanascimento375</em>
             </a>
 
             <div class="card card-padding-icon">
                 <svg class="icon-svg-large" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" style="stroke-width: 1;"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path></svg>
-                <h3>Apoio Local & Chaves</h3>
-                <p>Urgências no imóvel com <strong>Sra. Leda</strong></p>
+                <h3>Apoio Local</h3>
+                <p>Para chaves e urgências no imóvel</p>
+                <em style="color: var(--text-grey);">Sra. Leda</em>
                 <p style="font-weight: 600; color: var(--tropical-teal);">+55 (21) 98888-8888</p>
             </div>
 
         </div>
 
-        <div style="background-color: #fafafa; padding: 40px; border-radius: 8px; margin-top: 60px; margin-bottom: 20px; border: 1px solid #eee;">
-            <h2 style="color: var(--tropical-teal); margin-bottom: 20px; font-size: 1.5rem; text-align: center;">Números de Emergência</h2>
+        <div style="background-color: #fafafa; padding: 50px 30px; border-radius: 8px; margin-top: 60px; margin-bottom: 60px; border-left: 5px solid var(--warm-gold); box-shadow: 0 5px 20px rgba(0,0,0,0.03);">
+            <h2 style="color: var(--tropical-teal); margin-bottom: 30px; font-size: 1.8rem;">Números de Emergência</h2>
+            <p style="margin-bottom: 30px; color: #666;">Informações úteis para sua segurança no Rio de Janeiro.</p>
             
-            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; text-align: center;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                
                 <div>
-                    <strong style="display: block; color: var(--warm-gold); text-transform: uppercase; font-size: 0.8rem;">Polícia</strong>
-                    <span style="font-size: 1.2rem; font-weight: bold; color: var(--text-grey);">190</span>
+                    <h4 style="color: var(--warm-gold); margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px;">Serviços Públicos</h4>
+                    <ul class="clean-list">
+                        <li>
+                            <strong style="min-width: 120px; display:inline-block;">Polícia:</strong> 
+                            <span style="font-size: 1.1rem; font-weight: bold; color: var(--text-grey);">190</span>
+                        </li>
+                        <li>
+                            <strong style="min-width: 120px; display:inline-block;">Bombeiros:</strong> 
+                            <span style="font-size: 1.1rem; font-weight: bold; color: var(--text-grey);">193</span>
+                        </li>
+                        <li>
+                            <strong style="min-width: 120px; display:inline-block;">SAMU:</strong> 
+                            <span style="font-size: 1.1rem; font-weight: bold; color: var(--text-grey);">192</span>
+                        </li>
+                    </ul>
                 </div>
+
                 <div>
-                    <strong style="display: block; color: var(--warm-gold); text-transform: uppercase; font-size: 0.8rem;">Bombeiros</strong>
-                    <span style="font-size: 1.2rem; font-weight: bold; color: var(--text-grey);">193</span>
+                    <h4 style="color: var(--warm-gold); margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px;">No Bairro</h4>
+                    <ul class="clean-list">
+                        <li>
+                            <div style="display: flex; flex-direction: column;">
+                                <strong>Hospital (Emergência):</strong>
+                                <span>(21) 3257-1350</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div style="display: flex; flex-direction: column; margin-top: 10px;">
+                                <strong>Farmácia:</strong>
+                                <span>(21) 96570-3253</span>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-                <div>
-                    <strong style="display: block; color: var(--warm-gold); text-transform: uppercase; font-size: 0.8rem;">SAMU</strong>
-                    <span style="font-size: 1.2rem; font-weight: bold; color: var(--text-grey);">192</span>
-                </div>
-                <div>
-                    <strong style="display: block; color: var(--warm-gold); text-transform: uppercase; font-size: 0.8rem;">Hospital Próximo</strong>
-                    <span style="font-size: 1.2rem; font-weight: bold; color: var(--text-grey);">(21) 3257-1350</span>
-                </div>
+
             </div>
         </div>
 
