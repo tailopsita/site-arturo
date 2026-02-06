@@ -83,7 +83,7 @@ nav a:hover, nav a.active { color: var(--warm-gold); }
 }
 .intro-img img { 
     width: 100%; 
-    height: auto; /* Sem limite de altura */
+    height: auto; 
     border-radius: 8px; 
     box-shadow: 25px 25px 0px rgba(198, 156, 109, 0.2); 
 }
@@ -206,33 +206,26 @@ footer { background-color: var(--pure-white); border-top: 1px solid var(--light-
 .developer-credit a { color: var(--warm-gold); font-weight: 600; }
 .developer-credit a:hover { text-decoration: underline; }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    .header-content { flex-direction: column; gap: 15px; }
-    nav ul { flex-wrap: wrap; justify-content: center; gap: 8px; }
-    .hero-header h1 { font-size: 2.2rem; }
-    .intro { flex-direction: column; text-align: center; padding: 20px; gap: 30px; }
-    .address { text-align: left; }
-    .room-section, .room-section.reverse { flex-direction: column; gap: 30px; margin-bottom: 60px; }
-    .room-img img, .room-img-grid img { height: 300px; }
-    .room-img-grid-3 { grid-template-columns: 1fr; }
-    .room-img-grid-3 img { height: 250px; }
-    .modal-content { width: 95%; }
+/* --- ESTILO NOVO: LAYOUT CONTATO (LADO A LADO) --- */
+
+.contact-split-section {
+    display: flex;
+    align-items: center;
+    gap: 60px;
 }
 
-/* --- ESTILO: PERFIL DO ANFITRIÃO (CENTRALIZADO & ASSINATURA) --- */
-.host-profile-container {
+/* LADO ESQUERDO: O Card do Arturo (Maior) */
+.host-profile-card {
+    flex: 1.5; /* Ocupa mais espaço */
     background-color: var(--pure-white);
     border: 1px solid rgba(198, 156, 109, 0.3);
     border-radius: 8px;
-    padding: 60px 40px;
-    max-width: 800px;
-    margin: 0 auto 50px auto;
+    padding: 50px 40px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.03);
     text-align: center;
 }
 
-.host-content h2 {
+.host-profile-card h2 {
     color: var(--tropical-teal);
     margin-bottom: 25px;
     font-size: 2rem;
@@ -265,14 +258,9 @@ footer { background-color: var(--pure-white); border-top: 1px solid var(--light-
     font-size: 1.1rem;
     color: var(--text-grey);
 }
-
 .contact-row:last-child { margin-bottom: 0; }
-
 .contact-row svg {
-    width: 22px;
-    height: 22px;
-    color: var(--tropical-teal);
-    stroke-width: 2;
+    width: 22px; height: 22px; color: var(--tropical-teal); stroke-width: 2;
 }
 
 .host-signature-styled {
@@ -285,12 +273,24 @@ footer { background-color: var(--pure-white); border-top: 1px solid var(--light-
     letter-spacing: 1px;
 }
 
+/* LADO DIREITO: Título/Intro (Menor) */
+.contact-intro-block {
+    flex: 1; /* Ocupa menos espaço */
+}
+.contact-intro-block h1 {
+    font-size: 3rem;
+    color: var(--tropical-teal);
+    margin-bottom: 10px;
+    line-height: 1.1;
+}
+
+/* Responsividade: Vira coluna no celular */
 @media (max-width: 768px) {
-    .host-profile-container {
-        padding: 40px 20px;
+    .contact-split-section {
+        flex-direction: column-reverse; /* Título vai pra cima, Card pra baixo */
+        gap: 40px;
+        text-align: center;
     }
-    .host-signature-styled {
-        font-size: 2.2rem;
-        margin-top: 30px;
-    }
+    .contact-intro-block div { margin: 20px auto 0 auto; /* Centraliza a linha dourada */ }
+    .host-profile-card { padding: 30px 20px; }
 }
