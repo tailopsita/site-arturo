@@ -57,134 +57,101 @@ nav a:hover, nav a.active { color: var(--warm-gold); }
 }
 
 /* --- HERO & INTRO --- */
+/* Hero Padrão (Sem imagem) */
 .hero-header { text-align: center; padding: 60px 20px 40px 20px; }
 .hero-header h1 { font-size: 2.8rem; color: var(--tropical-teal); margin-bottom: 10px; line-height: 1.2; }
 .subtitle { font-size: 1rem; color: var(--warm-gold); font-family: var(--font-body); font-weight: 500; text-transform: uppercase; letter-spacing: 3px; }
 
+/* Hero com Imagem de Fundo (Checkin/Contato) */
+.hero-bg {
+    background-size: cover; background-position: center; background-repeat: no-repeat;
+    position: relative; color: var(--pure-white) !important; padding: 100px 20px;
+}
+.hero-overlay {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)); 
+    width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 1;
+}
+.hero-content-text { position: relative; z-index: 2; }
+.hero-bg h1 { color: var(--pure-white); text-shadow: 2px 2px 4px rgba(0,0,0,0.5); font-size: 3rem; }
+.hero-bg .subtitle { color: #f0f0f0; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
+
+/* Intro (Home) */
 .intro { padding: 20px 20px 80px 20px; display: flex; align-items: center; gap: 60px; }
 .intro-img img { width: 100%; border-radius: 8px; box-shadow: 20px 20px 0px rgba(198, 156, 109, 0.2); max-height: 400px; object-fit: cover; }
 .intro-text h2 { font-size: 2.2rem; margin-bottom: 20px; color: var(--tropical-teal); }
 .address { display: block; margin-top: 25px; padding: 15px; background: var(--pure-white); border-left: 4px solid var(--warm-gold); font-size: 0.9rem; font-style: italic; color: #8D5524; }
 
-/* --- SEÇÕES DO APARTAMENTO --- */
-.room-section {
-    display: flex;
-    align-items: center;
-    gap: 60px;
-    margin-bottom: 100px;
-    padding-top: 20px;
+/* --- SEÇÃO DO MAPA (NOVO) --- */
+.map-section {
+    background-color: var(--pure-white);
+    padding: 60px 0;
+    margin-bottom: 60px;
+    text-align: center;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
 }
-.room-section.reverse { flex-direction: row-reverse; }
+.map-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    border: 4px solid white;
+    outline: 1px solid var(--light-border);
+}
 
+/* --- SEÇÕES GERAIS --- */
+.room-section { display: flex; align-items: center; gap: 60px; margin-bottom: 100px; padding-top: 20px; }
+.room-section.reverse { flex-direction: row-reverse; }
 .room-text { flex: 1; }
 .room-text h2 { color: var(--tropical-teal); font-size: 2.2rem; margin-bottom: 20px; }
-.room-text p { font-size: 1.05rem; color: #666; margin-bottom: 20px; }
-
 .room-features { list-style: none; margin-top: 20px; }
 .room-features li { margin-bottom: 12px; padding-left: 25px; position: relative; font-size: 0.95rem; }
 .room-features li::before { content: "•"; color: var(--warm-gold); font-weight: bold; font-size: 1.5rem; position: absolute; left: 0; top: -5px; }
 
-/* --- IMAGENS E GRIDS (APARTAMENTO) --- */
+/* Imagens */
 .room-img img, .room-img-grid img, .room-img-grid-3 img {
-    width: 100%;
-    object-fit: cover;
-    border-radius: 8px;
+    width: 100%; object-fit: cover; border-radius: 8px;
     box-shadow: 10px 10px 0px rgba(198, 156, 109, 0.15);
-    cursor: zoom-in;
-    transition: transform 0.3s ease;
+    cursor: zoom-in; transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .room-img img:hover, .room-img-grid img:hover, .room-img-grid-3 img:hover {
-    transform: translateY(-5px);
-    box-shadow: 15px 15px 0px rgba(198, 156, 109, 0.25);
+    transform: translateY(-5px); box-shadow: 15px 15px 0px rgba(198, 156, 109, 0.25);
 }
-.room-img { flex: 1.2; }
-.room-img img { height: 450px; }
-.room-img-grid { flex: 1.2; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-.room-img-grid img { height: 450px; }
-.room-img-grid-3 { flex: 1.5; display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
-.room-img-grid-3 img { height: 300px; }
+.room-img { flex: 1.2; } .room-img img { height: 450px; }
+.room-img-grid { flex: 1.2; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; } .room-img-grid img { height: 450px; }
+.room-img-grid-3 { flex: 1.5; display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; } .room-img-grid-3 img { height: 300px; }
 
-/* --- MODAL (LIGHTBOX) --- */
-.modal {
-    display: none; position: fixed; z-index: 2000; padding-top: 50px;
-    left: 0; top: 0; width: 100%; height: 100%; overflow: auto;
-    background-color: rgba(0,0,0,0.9);
-}
-.modal-content {
-    margin: auto; display: block; width: auto; max-width: 90%; max-height: 90vh;
-    border: 2px solid var(--warm-gold); border-radius: 4px;
-}
-.close-modal {
-    position: absolute; top: 20px; right: 35px; color: #f1f1f1;
-    font-size: 40px; font-weight: bold; transition: 0.3s; cursor: pointer;
-}
-.close-modal:hover { color: var(--warm-gold); }
+/* Modal */
+.modal { display: none; position: fixed; z-index: 2000; padding-top: 50px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.9); }
+.modal-content { margin: auto; display: block; width: auto; max-width: 90%; max-height: 90vh; border: 2px solid var(--warm-gold); border-radius: 4px; }
+.close-modal { position: absolute; top: 20px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; cursor: pointer; }
 
-/* --- AMENIDADES --- */
-.amenities-section {
-    background-color: var(--pure-white); padding: 60px 40px; border-radius: 12px;
-    margin-top: 80px; border: 1px solid rgba(198, 156, 109, 0.2);
-}
-.amenities-list {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
-    gap: 25px; margin-top: 30px;
-}
-.amenity-item {
-    display: flex; align-items: center; gap: 15px;
-    color: #555; font-size: 0.95rem; font-weight: 500;
-}
+/* Amenidades */
+.amenities-section { background-color: var(--pure-white); padding: 60px 40px; border-radius: 12px; margin-top: 80px; border: 1px solid rgba(198, 156, 109, 0.2); }
+.amenities-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 25px; margin-top: 30px; }
+.amenity-item { display: flex; align-items: center; gap: 15px; color: #555; font-size: 0.95rem; font-weight: 500; }
 .amenity-icon { width: 25px !important; height: 25px !important; min-width: 25px; stroke: var(--tropical-teal); fill: none; stroke-width: 2; }
 
-/* --- CARDS E GRID (GUIA DO BAIRRO - CORREÇÃO AQUI) --- */
-
+/* Cards */
 .section-title { color: var(--tropical-teal); font-size: 2rem; margin-bottom: 40px; text-align: center; }
-
-/* 1. O Grid que segura os cards */
-.grid-icons { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Colunas automáticas */
-    gap: 30px; 
-    align-items: start;
-}
-
-/* 2. O Card individual */
-.card {
-    padding: 0 0 25px 0; 
-    border: 1px solid rgba(0,0,0,0.02); border-radius: 8px;
-    background-color: var(--pure-white); 
-    display: flex; flex-direction: column; align-items: center; text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.03); transition: 0.4s;
-    height: 100%; /* Garante altura igual */
-}
+.grid-icons { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; align-items: start; }
+.card { padding: 0 0 25px 0; border: 1px solid rgba(0,0,0,0.02); border-radius: 8px; background-color: var(--pure-white); display: flex; flex-direction: column; align-items: center; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.03); transition: 0.4s; height: 100%; }
 .card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.08); border-color: var(--warm-gold); }
-
-/* 3. A Imagem do Card (O PROBLEMA ESTAVA AQUI) */
-.card-image { 
-    width: 100%; 
-    height: 180px; /* Altura fixa para não ficar gigante */
-    object-fit: cover; /* Corta o excesso para caber */
-    margin-bottom: 20px; 
-    filter: brightness(0.98); 
-    border-radius: 8px 8px 0 0;
-}
-
+.card-image { width: 100%; height: 180px; object-fit: cover; margin-bottom: 20px; filter: brightness(0.98); border-radius: 8px 8px 0 0; }
 .card h3 { margin-bottom: 10px; color: var(--tropical-teal); font-size: 1.15rem; padding: 0 15px; }
 .card p { font-size: 0.85rem; color: #666; padding: 0 20px; font-weight: 300; margin-bottom: 20px; }
 .card em { display: block; margin-top: auto; font-style: normal; color: var(--warm-gold); font-weight: 500; font-size: 0.8rem; margin-bottom: 15px; }
+.card-padding-icon { padding-top: 45px; }
 
-/* Botão Ver no Mapa */
-.btn-map {
-    display: inline-flex; align-items: center; gap: 8px; margin-top: auto;
-    color: var(--warm-gold); font-size: 0.85rem; font-weight: 600;
-    padding: 8px 16px; border: 1px solid var(--warm-gold); border-radius: 20px;
-    transition: all 0.3s ease; text-decoration: none;
-}
+/* Botões */
+.btn { display: inline-block; background-color: var(--tropical-teal); color: var(--pure-white); padding: 16px 40px; border-radius: 50px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin-top: 30px; border: 2px solid var(--tropical-teal); box-shadow: 0 4px 15px rgba(31, 94, 86, 0.3); }
+.btn:hover { background-color: transparent; color: var(--tropical-teal); }
+.btn-map { display: inline-flex; align-items: center; gap: 8px; margin-top: auto; color: var(--warm-gold); font-size: 0.85rem; font-weight: 600; padding: 8px 16px; border: 1px solid var(--warm-gold); border-radius: 20px; transition: all 0.3s ease; text-decoration: none; }
 .btn-map:hover { background-color: var(--warm-gold); color: white; }
 .btn-map svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; }
 .card-actions { padding-bottom: 10px; }
 
-/* GERAL E LISTAS */
-.card-padding-icon { padding-top: 45px; }
+/* Ícones e Listas */
 .icon-svg, .icon-svg-large { stroke: var(--warm-gold); fill: none; stroke-width: 1.5; margin-bottom: 20px; display: block; margin-left: auto; margin-right: auto; }
 .icon-svg { width: 50px; height: 50px; }
 .icon-svg-large { width: 60px; height: 60px; }
@@ -199,49 +166,12 @@ footer { background-color: var(--pure-white); border-top: 1px solid var(--light-
 @media (max-width: 768px) {
     .header-content { flex-direction: column; gap: 15px; }
     nav ul { flex-wrap: wrap; justify-content: center; gap: 8px; }
+    .hero-header h1 { font-size: 2.2rem; }
+    .intro { flex-direction: column; text-align: center; padding: 20px; gap: 30px; }
+    .address { text-align: left; }
     .room-section, .room-section.reverse { flex-direction: column; gap: 30px; margin-bottom: 60px; }
     .room-img img, .room-img-grid img { height: 300px; }
     .room-img-grid-3 { grid-template-columns: 1fr; }
     .room-img-grid-3 img { height: 250px; }
     .modal-content { width: 95%; }
-}
-
-/* --- HEROS COM IMAGEM DE FUNDO --- */
-.hero-bg {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-    color: var(--pure-white) !important; /* Força texto branco */
-    padding: 100px 20px; /* Mais altura para dar destaque */
-}
-
-/* Camada escura para o texto aparecer bem */
-.hero-overlay {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)); 
-    /* Pode ajustar a opacidade (0.6) se quiser mais claro ou escuro */
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
-
-/* Garante que o texto fique acima da sombra */
-.hero-content-text {
-    position: relative;
-    z-index: 2;
-}
-
-.hero-bg h1 {
-    color: var(--pure-white);
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    font-size: 3rem;
-}
-
-.hero-bg .subtitle {
-    color: #f0f0f0; /* Branco levemente cinza */
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-    font-weight: 600;
 }
