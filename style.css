@@ -278,3 +278,72 @@ footer { background-color: var(--pure-white); border-top: 1px solid var(--light-
     fill: none;
     stroke-width: 2;
 }
+
+/* --- ESTILO NOVO: PERFIL DO ANFITRIÃO --- */
+.host-profile-container {
+    background-color: var(--pure-white);
+    border: 1px solid rgba(198, 156, 109, 0.3); /* Borda dourada sutil */
+    border-radius: 8px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    margin-bottom: 40px;
+}
+
+.host-content {
+    flex: 2;
+}
+
+.host-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    opacity: 0.2; /* Deixa o ícone decorativo bem suave */
+}
+.host-visual svg {
+    width: 150px;
+    height: 150px;
+}
+
+.host-direct-contact {
+    margin-top: 20px;
+    background-color: #fafafa;
+    padding: 20px;
+    border-radius: 6px;
+    border-left: 3px solid var(--warm-gold);
+}
+
+.contact-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: var(--text-grey);
+}
+.contact-row:last-child { margin-bottom: 0; }
+.contact-row svg {
+    width: 20px;
+    height: 20px;
+    color: var(--tropical-teal);
+}
+
+/* Responsivo para celular */
+@media (max-width: 768px) {
+    .host-profile-container {
+        flex-direction: column-reverse; /* Coloca o texto em cima no mobile */
+        text-align: center;
+        padding: 30px 20px;
+    }
+    .host-direct-contact {
+        text-align: left;
+    }
+    .host-visual svg {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 20px;
+    }
+}
