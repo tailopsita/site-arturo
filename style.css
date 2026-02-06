@@ -57,12 +57,11 @@ nav a:hover, nav a.active { color: var(--warm-gold); }
 }
 
 /* --- HERO & INTRO --- */
-/* Hero Padrão (Sem imagem) */
 .hero-header { text-align: center; padding: 60px 20px 40px 20px; }
 .hero-header h1 { font-size: 2.8rem; color: var(--tropical-teal); margin-bottom: 10px; line-height: 1.2; }
 .subtitle { font-size: 1rem; color: var(--warm-gold); font-family: var(--font-body); font-weight: 500; text-transform: uppercase; letter-spacing: 3px; }
 
-/* Hero com Imagem de Fundo (Checkin/Contato) */
+/* Hero com Imagem de Fundo */
 .hero-bg {
     background-size: cover; background-position: center; background-repeat: no-repeat;
     position: relative; color: var(--pure-white) !important; padding: 100px 20px;
@@ -77,11 +76,17 @@ nav a:hover, nav a.active { color: var(--warm-gold); }
 
 /* Intro (Home) */
 .intro { padding: 20px 20px 80px 20px; display: flex; align-items: center; gap: 60px; }
-.intro-img img { width: 100%; border-radius: 8px; box-shadow: 20px 20px 0px rgba(198, 156, 109, 0.2); max-height: 400px; object-fit: cover; }
+.intro-img img { 
+    width: 100%; 
+    border-radius: 8px; 
+    box-shadow: 20px 20px 0px rgba(198, 156, 109, 0.2); 
+    max-height: 550px; /* AUMENTADO DE 400PX PARA 550PX */
+    object-fit: cover; 
+}
 .intro-text h2 { font-size: 2.2rem; margin-bottom: 20px; color: var(--tropical-teal); }
 .address { display: block; margin-top: 25px; padding: 15px; background: var(--pure-white); border-left: 4px solid var(--warm-gold); font-size: 0.9rem; font-style: italic; color: #8D5524; }
 
-/* --- SEÇÃO DO MAPA (NOVO) --- */
+/* --- SEÇÃO DO MAPA --- */
 .map-section {
     background-color: var(--pure-white);
     padding: 60px 0;
@@ -91,15 +96,47 @@ nav a:hover, nav a.active { color: var(--warm-gold); }
     border-bottom: 1px solid #eee;
 }
 .map-container img {
-    max-width: 100%;
+    max-width: 800px; /* RESTRINGIDO PARA NÃO FICAR GIGANTE */
+    width: 100%;
     height: auto;
+    display: block;
+    margin: 0 auto; /* CENTRALIZA */
     border-radius: 8px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.05);
     border: 4px solid white;
     outline: 1px solid var(--light-border);
 }
 
-/* --- SEÇÕES GERAIS --- */
+/* --- SEÇÃO DE AVALIAÇÕES --- */
+.reviews-section {
+    background-color: #f8f8f8;
+    padding: 80px 0;
+    margin-top: 40px;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+.review-card {
+    background-color: var(--pure-white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border: 1px solid rgba(198, 156, 109, 0.15);
+    text-align: center;
+    position: relative;
+}
+.review-stars { color: var(--warm-gold); font-size: 1.2rem; letter-spacing: 2px; margin-bottom: 15px; display: block; }
+.review-text { font-family: var(--font-body); font-style: italic; color: #555; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px; }
+.review-author { font-weight: 700; color: var(--tropical-teal); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
+.review-date { display: block; font-size: 0.75rem; color: #999; margin-top: 5px; font-weight: 400; }
+.review-card::before { content: "“"; font-family: serif; font-size: 5rem; color: rgba(198, 156, 109, 0.1); position: absolute; top: -10px; left: 20px; line-height: 1; }
+
+/* --- GERAIS E GRIDS --- */
 .room-section { display: flex; align-items: center; gap: 60px; margin-bottom: 100px; padding-top: 20px; }
 .room-section.reverse { flex-direction: row-reverse; }
 .room-text { flex: 1; }
@@ -108,7 +145,7 @@ nav a:hover, nav a.active { color: var(--warm-gold); }
 .room-features li { margin-bottom: 12px; padding-left: 25px; position: relative; font-size: 0.95rem; }
 .room-features li::before { content: "•"; color: var(--warm-gold); font-weight: bold; font-size: 1.5rem; position: absolute; left: 0; top: -5px; }
 
-/* Imagens */
+/* Imagens Gerais */
 .room-img img, .room-img-grid img, .room-img-grid-3 img {
     width: 100%; object-fit: cover; border-radius: 8px;
     box-shadow: 10px 10px 0px rgba(198, 156, 109, 0.15);
