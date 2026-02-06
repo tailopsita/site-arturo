@@ -84,122 +84,106 @@ nav a:hover, nav a.active { color: var(--warm-gold); }
 .room-features li { margin-bottom: 12px; padding-left: 25px; position: relative; font-size: 0.95rem; }
 .room-features li::before { content: "•"; color: var(--warm-gold); font-weight: bold; font-size: 1.5rem; position: absolute; left: 0; top: -5px; }
 
-/* --- IMAGENS E GRIDS --- */
-/* Configuração base para todas as imagens de cômodos */
+/* --- IMAGENS E GRIDS (APARTAMENTO) --- */
 .room-img img, .room-img-grid img, .room-img-grid-3 img {
     width: 100%;
-    object-fit: cover; /* Corta para preencher o quadrado perfeitamente */
+    object-fit: cover;
     border-radius: 8px;
     box-shadow: 10px 10px 0px rgba(198, 156, 109, 0.15);
-    cursor: zoom-in; /* Mostra a lupa ao passar o mouse */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
 }
-
-/* Efeito ao passar o mouse (Levanta levemente) */
 .room-img img:hover, .room-img-grid img:hover, .room-img-grid-3 img:hover {
     transform: translateY(-5px);
     box-shadow: 15px 15px 0px rgba(198, 156, 109, 0.25);
 }
-
-/* Layouts de Grid */
 .room-img { flex: 1.2; }
 .room-img img { height: 450px; }
-
-.room-img-grid {
-    flex: 1.2;
-    display: grid; grid-template-columns: 1fr 1fr; gap: 15px;
-}
+.room-img-grid { flex: 1.2; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
 .room-img-grid img { height: 450px; }
+.room-img-grid-3 { flex: 1.5; display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+.room-img-grid-3 img { height: 300px; }
 
-.room-img-grid-3 {
-    flex: 1.5;
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;
-}
-.room-img-grid-3 img { height: 300px; } /* Altura menor para o trio de fotos */
-
-
-/* --- MODAL (LIGHTBOX - A TELA CHEIA) --- */
-/* O Fundo escuro */
+/* --- MODAL (LIGHTBOX) --- */
 .modal {
-    display: none; /* Escondido por padrão */
-    position: fixed;
-    z-index: 2000; /* Fica acima de tudo */
-    padding-top: 50px;
-    left: 0; top: 0;
-    width: 100%; height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.9); /* Preto 90% transparente */
+    display: none; position: fixed; z-index: 2000; padding-top: 50px;
+    left: 0; top: 0; width: 100%; height: 100%; overflow: auto;
+    background-color: rgba(0,0,0,0.9);
 }
-
-/* A Imagem dentro do Modal */
 .modal-content {
-    margin: auto;
-    display: block;
-    width: auto;
-    max-width: 90%; 
-    max-height: 90vh; /* Altura máxima da tela */
-    border: 2px solid var(--warm-gold);
-    border-radius: 4px;
+    margin: auto; display: block; width: auto; max-width: 90%; max-height: 90vh;
+    border: 2px solid var(--warm-gold); border-radius: 4px;
 }
-
-/* O botão de fechar (X) */
 .close-modal {
-    position: absolute;
-    top: 20px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-    cursor: pointer;
+    position: absolute; top: 20px; right: 35px; color: #f1f1f1;
+    font-size: 40px; font-weight: bold; transition: 0.3s; cursor: pointer;
 }
 .close-modal:hover { color: var(--warm-gold); }
 
-/* Animação de entrada */
-.modal-content { animation-name: zoom; animation-duration: 0.3s; }
-@keyframes zoom { from {transform:scale(0)} to {transform:scale(1)} }
-
-
 /* --- AMENIDADES --- */
 .amenities-section {
-    background-color: var(--pure-white);
-    padding: 60px 40px;
-    border-radius: 12px;
-    margin-top: 80px;
-    border: 1px solid rgba(198, 156, 109, 0.2);
+    background-color: var(--pure-white); padding: 60px 40px; border-radius: 12px;
+    margin-top: 80px; border: 1px solid rgba(198, 156, 109, 0.2);
 }
-
 .amenities-list {
     display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
     gap: 25px; margin-top: 30px;
 }
-
 .amenity-item {
     display: flex; align-items: center; gap: 15px;
     color: #555; font-size: 0.95rem; font-weight: 500;
 }
+.amenity-icon { width: 25px !important; height: 25px !important; min-width: 25px; stroke: var(--tropical-teal); fill: none; stroke-width: 2; }
 
-/* ÍCONES PEQUENOS E FIXOS (Correção definitiva) */
-.amenity-icon {
-    width: 25px !important;  
-    height: 25px !important;
-    min-width: 25px;         
-    stroke: var(--tropical-teal);
-    fill: none;
-    stroke-width: 2;
+/* --- CARDS E GRID (GUIA DO BAIRRO - CORREÇÃO AQUI) --- */
+
+.section-title { color: var(--tropical-teal); font-size: 2rem; margin-bottom: 40px; text-align: center; }
+
+/* 1. O Grid que segura os cards */
+.grid-icons { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Colunas automáticas */
+    gap: 30px; 
+    align-items: start;
 }
 
-
-/* --- CARDS E GERAL --- */
-.section-title { color: var(--tropical-teal); font-size: 2rem; margin-bottom: 40px; text-align: center; }
-.grid-icons { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; }
+/* 2. O Card individual */
 .card {
-    padding: 0 0 25px 0; border: 1px solid rgba(0,0,0,0.02); border-radius: 8px;
+    padding: 0 0 25px 0; 
+    border: 1px solid rgba(0,0,0,0.02); border-radius: 8px;
     background-color: var(--pure-white); 
     display: flex; flex-direction: column; align-items: center; text-align: center;
     box-shadow: 0 5px 15px rgba(0,0,0,0.03); transition: 0.4s;
+    height: 100%; /* Garante altura igual */
 }
 .card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.08); border-color: var(--warm-gold); }
+
+/* 3. A Imagem do Card (O PROBLEMA ESTAVA AQUI) */
+.card-image { 
+    width: 100%; 
+    height: 180px; /* Altura fixa para não ficar gigante */
+    object-fit: cover; /* Corta o excesso para caber */
+    margin-bottom: 20px; 
+    filter: brightness(0.98); 
+    border-radius: 8px 8px 0 0;
+}
+
+.card h3 { margin-bottom: 10px; color: var(--tropical-teal); font-size: 1.15rem; padding: 0 15px; }
+.card p { font-size: 0.85rem; color: #666; padding: 0 20px; font-weight: 300; margin-bottom: 20px; }
+.card em { display: block; margin-top: auto; font-style: normal; color: var(--warm-gold); font-weight: 500; font-size: 0.8rem; margin-bottom: 15px; }
+
+/* Botão Ver no Mapa */
+.btn-map {
+    display: inline-flex; align-items: center; gap: 8px; margin-top: auto;
+    color: var(--warm-gold); font-size: 0.85rem; font-weight: 600;
+    padding: 8px 16px; border: 1px solid var(--warm-gold); border-radius: 20px;
+    transition: all 0.3s ease; text-decoration: none;
+}
+.btn-map:hover { background-color: var(--warm-gold); color: white; }
+.btn-map svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; }
+.card-actions { padding-bottom: 10px; }
+
+/* GERAL E LISTAS */
 .card-padding-icon { padding-top: 45px; }
 .icon-svg, .icon-svg-large { stroke: var(--warm-gold); fill: none; stroke-width: 1.5; margin-bottom: 20px; display: block; margin-left: auto; margin-right: auto; }
 .icon-svg { width: 50px; height: 50px; }
@@ -220,32 +204,4 @@ footer { background-color: var(--pure-white); border-top: 1px solid var(--light-
     .room-img-grid-3 { grid-template-columns: 1fr; }
     .room-img-grid-3 img { height: 250px; }
     .modal-content { width: 95%; }
-}
-
-/* Botão Ver no Mapa */
-.btn-map {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: auto;
-    color: var(--warm-gold);
-    font-size: 0.85rem;
-    font-weight: 600;
-    padding: 8px 16px;
-    border: 1px solid var(--warm-gold);
-    border-radius: 20px;
-    transition: all 0.3s ease;
-}
-
-.btn-map:hover {
-    background-color: var(--warm-gold);
-    color: white;
-}
-
-.btn-map svg {
-    width: 16px;
-    height: 16px;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 2;
 }
