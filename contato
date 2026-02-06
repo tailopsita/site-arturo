@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato | Casa Nascimento 375</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <div class="logo">Casa Nascimento 375</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="apartamento.html">O Apartamento</a></li>
+                    <li><a href="guia.html">Guia do Bairro</a></li>
+                    <li><a href="checkin.html">Check-in</a></li>
+                    <li><a href="contato.html" class="active">Contato</a></li>
+                    <li><a href="https://airbnb.com.br/rooms/25366285" target="_blank" class="btn-airbnb">Reservar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero-header hero-bg" style="background-image: url('img/rua.jpg');">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content-text">
+            <h1>Fale Conosco</h1>
+            <p class="subtitle">Estamos aqui para ajudar</p>
+        </div>
+    </div>
+
+    <div class="container" style="padding-top: 60px;">
+
+        <div class="grid-icons">
+            
+            <a href="https://www.instagram.com/casanascimento375/" target="_blank" class="card card-padding-icon" style="border-color: var(--warm-gold);">
+                <svg class="icon-svg-large" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" style="stroke: #E1306C;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                <h3>Siga no Instagram</h3>
+                <p>Veja mais fotos e novidades em @casanascimento375</p>
+                <em>Ir para o Instagram &rarr;</em>
+            </a>
+
+            <div class="card card-padding-icon">
+                <svg class="icon-svg-large" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                <h3>Reservas & Dúvidas</h3>
+                <p>Fale diretamente com o anfitrião <strong>Arturo</strong>.</p>
+                <ul class="clean-list" style="margin-top: 15px; display: inline-block;">
+                    <li><strong>Tel:</strong> +55 (21) 99999-9999</li>
+                    <li><strong>E-mail:</strong> contato@casanascimento.com</li>
+                </ul>
+            </div>
+
+            <div class="card card-padding-icon">
+                <svg class="icon-svg-large" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" style="stroke: #d9534f;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                <h3>Emergência / Check-in</h3>
+                <p>Para assuntos urgentes no local, contate a <strong>Sra. Leda</strong>.</p>
+                <p style="font-weight: bold; font-size: 1.1rem; color: #d9534f;">+55 (21) 98888-8888</p>
+            </div>
+
+        </div>
+
+        <div style="background-color: var(--pure-white); padding: 40px; border-radius: 8px; margin-top: 60px; margin-bottom: 60px; border: 1px solid #eee; text-align: center;">
+            <h2 style="color: var(--tropical-teal); margin-bottom: 20px;">Onde Estamos</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 30px;">Rua Nascimento Silva, 375 - Ipanema, Rio de Janeiro - RJ</p>
+            
+            <a href="https://www.google.com/maps/search/?api=1&query=Rua+Nascimento+Silva+375+Ipanema+Rio+de+Janeiro" target="_blank" class="btn">
+                Ver Localização no Mapa
+            </a>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="container">
+            <p><strong>Casa Nascimento 375</strong> | Ipanema, Rio de Janeiro</p>
+        </div>
+    </footer>
+
+</body>
+</html>
