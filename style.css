@@ -205,3 +205,43 @@ footer { background-color: var(--pure-white); border-top: 1px solid var(--light-
     .room-img-grid-3 img { height: 250px; }
     .modal-content { width: 95%; }
 }
+
+/* --- HEROS COM IMAGEM DE FUNDO --- */
+.hero-bg {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    color: var(--pure-white) !important; /* Força texto branco */
+    padding: 100px 20px; /* Mais altura para dar destaque */
+}
+
+/* Camada escura para o texto aparecer bem */
+.hero-overlay {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)); 
+    /* Pode ajustar a opacidade (0.6) se quiser mais claro ou escuro */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* Garante que o texto fique acima da sombra */
+.hero-content-text {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-bg h1 {
+    color: var(--pure-white);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    font-size: 3rem;
+}
+
+.hero-bg .subtitle {
+    color: #f0f0f0; /* Branco levemente cinza */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    font-weight: 600;
+}
