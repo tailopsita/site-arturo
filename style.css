@@ -83,7 +83,7 @@ nav a:hover, nav a.active { color: var(--warm-gold); }
 }
 .intro-img img { 
     width: 100%; 
-    height: auto; /* Sem limite de altura para a foto grande da home */
+    height: auto; /* Sem limite de altura */
     border-radius: 8px; 
     box-shadow: 25px 25px 0px rgba(198, 156, 109, 0.2); 
 }
@@ -202,6 +202,9 @@ nav a:hover, nav a.active { color: var(--warm-gold); }
 
 /* Footer */
 footer { background-color: var(--pure-white); border-top: 1px solid var(--light-border); color: var(--tropical-teal); text-align: center; padding: 50px 0; margin-top: 60px; }
+.developer-credit { font-size: 0.8rem; margin-top: 10px; opacity: 0.8; }
+.developer-credit a { color: var(--warm-gold); font-weight: 600; }
+.developer-credit a:hover { text-decoration: underline; }
 
 /* Responsividade */
 @media (max-width: 768px) {
@@ -223,10 +226,10 @@ footer { background-color: var(--pure-white); border-top: 1px solid var(--light-
     border: 1px solid rgba(198, 156, 109, 0.3);
     border-radius: 8px;
     padding: 60px 40px;
-    max-width: 800px; /* Limita a largura para ficar elegante e centralizado */
-    margin: 0 auto 50px auto; /* Centraliza o bloco na tela */
+    max-width: 800px;
+    margin: 0 auto 50px auto;
     box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-    text-align: center; /* Centraliza todo o texto */
+    text-align: center;
 }
 
 .host-content h2 {
@@ -249,8 +252,8 @@ footer { background-color: var(--pure-white); border-top: 1px solid var(--light-
     padding: 25px;
     border-radius: 6px;
     border-left: 4px solid var(--warm-gold);
-    text-align: left; /* Mantém os contatos alinhados à esquerda para leitura fácil */
-    display: inline-block; /* Faz o bloco de contato ficar ajustado ao conteúdo */
+    text-align: left;
+    display: inline-block;
     width: 100%;
 }
 
@@ -272,18 +275,16 @@ footer { background-color: var(--pure-white); border-top: 1px solid var(--light-
     stroke-width: 2;
 }
 
-/* NOVA CLASSE PARA A ASSINATURA */
 .host-signature-styled {
-    font-family: var(--font-heading); /* Fonte Playfair Display */
+    font-family: var(--font-heading);
     font-style: italic;
-    font-size: 3rem; /* Tamanho grande */
+    font-size: 3rem;
     color: var(--warm-gold);
     margin-top: 40px;
     display: block;
     letter-spacing: 1px;
 }
 
-/* Responsivo para celular */
 @media (max-width: 768px) {
     .host-profile-container {
         padding: 40px 20px;
