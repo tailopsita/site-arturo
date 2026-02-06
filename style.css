@@ -75,7 +75,6 @@ nav a:hover, nav a.active { color: var(--warm-gold); }
 .hero-bg .subtitle { color: #f0f0f0; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
 
 /* Intro (Home) */
-/* ATUALIZADO: Ajuste para a imagem de Ipanema ficar grande */
 .intro { 
     padding: 40px 20px 80px 20px; 
     display: flex; 
@@ -84,11 +83,10 @@ nav a:hover, nav a.active { color: var(--warm-gold); }
 }
 .intro-img img { 
     width: 100%; 
-    height: auto; /* Removemos o limite de altura para a foto crescer */
+    height: auto; /* Sem limite de altura para a foto grande da home */
     border-radius: 8px; 
     box-shadow: 25px 25px 0px rgba(198, 156, 109, 0.2); 
 }
-
 .intro-text h2 { font-size: 2.2rem; margin-bottom: 20px; color: var(--tropical-teal); }
 .address { display: block; margin-top: 25px; padding: 15px; background: var(--pure-white); border-left: 4px solid var(--warm-gold); font-size: 0.9rem; font-style: italic; color: #8D5524; }
 
@@ -219,44 +217,41 @@ footer { background-color: var(--pure-white); border-top: 1px solid var(--light-
     .modal-content { width: 95%; }
 }
 
-/* --- ESTILO: PERFIL DO ANFITRIÃO (NOVO CONTATO) --- */
-/* Estilos adicionados para a nova página de contato funcionar */
-
+/* --- ESTILO: PERFIL DO ANFITRIÃO (CENTRALIZADO & ASSINATURA) --- */
 .host-profile-container {
     background-color: var(--pure-white);
-    border: 1px solid rgba(198, 156, 109, 0.3); /* Borda dourada sutil */
+    border: 1px solid rgba(198, 156, 109, 0.3);
     border-radius: 8px;
-    padding: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
+    padding: 60px 40px;
+    max-width: 800px; /* Limita a largura para ficar elegante e centralizado */
+    margin: 0 auto 50px auto; /* Centraliza o bloco na tela */
     box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-    margin-bottom: 40px;
+    text-align: center; /* Centraliza todo o texto */
 }
 
-.host-content {
-    flex: 2;
+.host-content h2 {
+    color: var(--tropical-teal);
+    margin-bottom: 25px;
+    font-size: 2rem;
 }
 
-.host-visual {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    opacity: 0.2; /* Ícone suave */
-}
-
-.host-visual svg {
-    width: 150px;
-    height: 150px;
+.host-message {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.8;
+    font-size: 1.1rem;
 }
 
 .host-direct-contact {
-    margin-top: 25px;
+    margin-top: 35px;
     background-color: #fafafa;
-    padding: 20px;
+    padding: 25px;
     border-radius: 6px;
-    border-left: 3px solid var(--warm-gold);
+    border-left: 4px solid var(--warm-gold);
+    text-align: left; /* Mantém os contatos alinhados à esquerda para leitura fácil */
+    display: inline-block; /* Faz o bloco de contato ficar ajustado ao conteúdo */
+    width: 100%;
 }
 
 .contact-row {
@@ -264,32 +259,37 @@ footer { background-color: var(--pure-white); border-top: 1px solid var(--light-
     align-items: center;
     gap: 15px;
     margin-bottom: 12px;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     color: var(--text-grey);
 }
 
 .contact-row:last-child { margin-bottom: 0; }
 
 .contact-row svg {
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
     color: var(--tropical-teal);
     stroke-width: 2;
 }
 
-/* Responsivo Específico para o Host */
+/* NOVA CLASSE PARA A ASSINATURA */
+.host-signature-styled {
+    font-family: var(--font-heading); /* Fonte Playfair Display */
+    font-style: italic;
+    font-size: 3rem; /* Tamanho grande */
+    color: var(--warm-gold);
+    margin-top: 40px;
+    display: block;
+    letter-spacing: 1px;
+}
+
+/* Responsivo para celular */
 @media (max-width: 768px) {
     .host-profile-container {
-        flex-direction: column-reverse;
-        text-align: center;
-        padding: 30px 20px;
+        padding: 40px 20px;
     }
-    .host-direct-contact {
-        text-align: left;
-    }
-    .host-visual svg {
-        width: 80px;
-        height: 80px;
-        margin-bottom: 20px;
+    .host-signature-styled {
+        font-size: 2.2rem;
+        margin-top: 30px;
     }
 }
