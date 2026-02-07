@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O Apartamento | Casa Nascimento 375</title>
+    
     <link rel="icon" href="img/favicon.png" type="image/png">
+    
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
@@ -16,10 +18,11 @@
             <nav>
                 <ul>
                     <li><a href="index.html">Início</a></li>
-                    <li><a href="apartamento.html">O Apartamento</a></li>
+                    <li><a href="apartamento.html" class="active">O Apartamento</a></li>
                     <li><a href="guia.html">Guia do Bairro</a></li>
                     <li><a href="checkin.html">Check-in</a></li>
-                    <li><a href="contato.html">Contato</a></li> <li><a href="https://airbnb.com.br/rooms/25366285" target="_blank" class="btn-airbnb">Reservar</a></li>
+                    <li><a href="contato.html">Contato</a></li> 
+                    <li><a href="https://airbnb.com.br/rooms/25366285" target="_blank" class="btn-airbnb">Reservar</a></li>
                 </ul>
             </nav>
         </div>
@@ -45,8 +48,8 @@
                 </ul>
             </div>
             <div class="room-img-grid">
-                <img src="img/sala2.jpeg" alt="Sala de estar integrada" onclick="openModal(this)">
-                <img src="img/sala-tv.jpeg" alt="Detalhe TV e Café" onclick="openModal(this)">
+                <img src="img/sala2.jpeg" alt="Sala de estar integrada" onclick="openModal(this)" style="cursor: zoom-in;">
+                <img src="img/sala-tv.jpeg" alt="Detalhe TV e Café" onclick="openModal(this)" style="cursor: zoom-in;">
             </div>
         </section>
 
@@ -61,7 +64,7 @@
                 </ul>
             </div>
             <div class="room-img">
-                <img src="img/sacada.jpeg" alt="Varanda com rede de descanso" onclick="openModal(this)">
+                <img src="img/sacada.jpeg" alt="Varanda com rede de descanso" onclick="openModal(this)" style="cursor: zoom-in;">
             </div>
         </section>
 
@@ -77,9 +80,9 @@
                 </ul>
             </div>
             <div class="room-img-grid-3">
-                <img src="img/quartocasal1.jpeg" alt="Quarto Casal Janela" onclick="openModal(this)">
-                <img src="img/quartocasal2.jpeg" alt="Quarto Casal Detalhe" onclick="openModal(this)">
-                <img src="img/quartosolteiro.jpeg" alt="Quarto Solteiro" onclick="openModal(this)">
+                <img src="img/quartocasal1.jpeg" alt="Quarto Casal Janela" onclick="openModal(this)" style="cursor: zoom-in;">
+                <img src="img/quartocasal2.jpeg" alt="Quarto Casal Detalhe" onclick="openModal(this)" style="cursor: zoom-in;">
+                <img src="img/quartosolteiro.jpeg" alt="Quarto Solteiro" onclick="openModal(this)" style="cursor: zoom-in;">
             </div>
         </section>
 
@@ -94,8 +97,8 @@
                 </ul>
             </div>
             <div class="room-img-grid">
-                <img src="img/cozinha2.jpeg" alt="Cozinha equipada" onclick="openModal(this)">
-                <img src="img/maquina.jpeg" alt="Máquina de Lavar" onclick="openModal(this)">
+                <img src="img/cozinha2.jpeg" alt="Cozinha equipada" onclick="openModal(this)" style="cursor: zoom-in;">
+                <img src="img/maquina.jpeg" alt="Máquina de Lavar" onclick="openModal(this)" style="cursor: zoom-in;">
             </div>
         </section>
 
@@ -110,8 +113,8 @@
                 </ul>
             </div>
             <div class="room-img-grid">
-                <img src="img/banheiroprincipal.jpeg" alt="Banheiro Social" onclick="openModal(this)">
-                <img src="img/lavabo.jpeg" alt="Lavabo" onclick="openModal(this)">
+                <img src="img/banheiroprincipal.jpeg" alt="Banheiro Social" onclick="openModal(this)" style="cursor: zoom-in;">
+                <img src="img/lavabo.jpeg" alt="Lavabo" onclick="openModal(this)" style="cursor: zoom-in;">
             </div>
         </section>
 
@@ -200,14 +203,20 @@
         function openModal(element) {
             var modal = document.getElementById("imageModal");
             var modalImg = document.getElementById("img01");
-            modal.style.display = "flex"; // Centraliza com flexbox
-            modal.style.alignItems = "center";
-            modal.style.justifyContent = "center";
+            
+            modal.style.display = "flex"; // Usa flex para centralizar com o novo CSS
             modalImg.src = element.src; 
+            
+            // Impede a rolagem do fundo
+            document.body.style.overflow = "hidden";
         }
 
         function closeModal() {
-            document.getElementById("imageModal").style.display = "none";
+            var modal = document.getElementById("imageModal");
+            modal.style.display = "none";
+            
+            // Devolve a rolagem do fundo
+            document.body.style.overflow = "auto";
         }
         
         // Fechar com ESC também
