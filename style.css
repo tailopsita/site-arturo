@@ -260,3 +260,54 @@ footer { background-color: var(--pure-white); border-top: 1px solid var(--light-
     /* 5. Check-in Grid Mobile */
     .checkout-grid { grid-template-columns: 1fr; }
 }
+
+/* --- NOVA LISTA DE CHECK-OUT (Estilo Checklist) --- */
+.checklist-box {
+    background-color: var(--pure-white);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border: 1px solid rgba(198, 156, 109, 0.2);
+}
+
+.custom-checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.custom-checklist li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px dashed #eee;
+    font-size: 1rem;
+    color: var(--text-grey);
+}
+
+.custom-checklist li:last-child {
+    border-bottom: none;
+}
+
+/* O "Check" Dourado */
+.check-icon {
+    min-width: 24px;
+    height: 24px;
+    background-color: var(--warm-gold);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0; /* Impede que o ícone amasse em telas pequenas */
+}
+
+/* Responsividade para a Hero do Checkin */
+@media (max-width: 768px) {
+    .hero-header h1 { font-size: 2rem; }
+    .checklist-box { padding: 25px; }
+}
