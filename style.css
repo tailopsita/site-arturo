@@ -306,18 +306,59 @@ footer { background-color: var(--pure-white); border-top: 1px solid var(--light-
 }
 
 /* Responsivo */
-@media (max-width: 768px) {
-    .contact-split-layout {
+/* --- CORREÇÕES DE RESPONSIVIDADE (Android e Telas Menores) --- */
+
+@media (max-width: 900px) { /* Aumentei o limite para pegar tablets e celulares grandes */
+    
+    /* Conserta o Cabeçalho quebrando */
+    .header-content {
         flex-direction: column;
-        gap: 30px;
         text-align: center;
+        gap: 15px;
     }
-    .contact-intro-side { 
-        text-align: center; 
+
+    nav ul {
+        flex-wrap: wrap; /* Permite que os itens do menu desçam se faltar espaço */
+        justify-content: center;
+        gap: 15px;
+        padding: 0;
+    }
+
+    nav a {
+        font-size: 0.85rem; /* Fonte um pouco maior para toque */
+        padding: 8px 10px;
+        display: inline-block;
+    }
+
+    /* Conserta a seção "Sala de Estar" e outras divididas */
+    .room-section, 
+    .room-section.reverse,
+    .contact-split-layout {
+        flex-direction: column !important; /* Força empilhamento vertical */
+        gap: 30px;
+    }
+
+    .room-text, .room-img, 
+    .contact-intro-side, .contact-host-side {
+        width: 100%; /* Garante que ocupem a largura total */
+        flex: none;
+    }
+
+    /* Ajustes específicos de texto */
+    .contact-intro-side {
+        text-align: center; /* Centraliza o título no celular */
         padding-right: 0;
     }
-    .gold-separator { margin: 20px auto 0 auto; }
-    .host-card-box { padding: 25px 20px; }
+    
+    .gold-separator {
+        margin: 20px auto; /* Centraliza o traço dourado */
+    }
+
+    /* Garante que imagens não estourem a tela */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
 }
 
 /* --- ESTILO PARA CARDS DE SERVIÇOS (COMPACTO) --- */
