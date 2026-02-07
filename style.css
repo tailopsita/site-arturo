@@ -206,104 +206,116 @@ footer { background-color: var(--pure-white); border-top: 1px solid var(--light-
 .developer-credit a { color: var(--warm-gold); font-weight: 600; }
 .developer-credit a:hover { text-decoration: underline; }
 
-/* --- NOVO LAYOUT DE CONTATO (LADO A LADO) --- */
+/* --- NOVO LAYOUT DE CONTATO (Refinado) --- */
 
 .contact-split-layout {
     display: flex;
-    align-items: center; /* Centraliza verticalmente */
-    justify-content: space-between;
-    gap: 60px;
+    align-items: center; 
+    justify-content: center; /* Centraliza o conjunto na tela */
+    gap: 40px; /* Espaçamento equilibrado */
     margin-bottom: 60px;
+    max-width: 1000px; /* Limita a largura total para não esticar demais */
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* LADO ESQUERDO: Título/Intro (Menor) */
+/* LADO ESQUERDO: Título/Intro */
 .contact-intro-side {
-    flex: 0.8; /* Ocupa um pouco menos que a metade */
-    text-align: left;
+    flex: 1; 
+    text-align: right; /* Alinha o título à direita, encostando no card */
+    padding-right: 20px;
 }
+
 .contact-intro-side h1 {
-    font-size: 3.5rem; /* Título grande e impactante */
+    font-size: 3rem; 
     color: var(--tropical-teal);
     line-height: 1.1;
     margin-bottom: 10px;
 }
+
 .gold-separator {
     width: 60px;
     height: 4px;
     background-color: var(--warm-gold);
-    margin-top: 25px;
+    margin-top: 20px;
+    margin-left: auto; /* Joga a linha para a direita */
 }
 
-/* LADO DIREITO: Anfitrião (Maior) */
+/* LADO DIREITO: Anfitrião */
 .contact-host-side {
-    flex: 1.2; /* Ocupa mais espaço, como solicitado */
+    flex: 1.2; /* Um pouco maior que o título, mas controlado */
 }
 
 .host-card-box {
     background-color: var(--pure-white);
     border: 1px solid rgba(198, 156, 109, 0.3);
     border-radius: 8px;
-    padding: 50px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.05);
-    text-align: center; /* Mantém o texto do card centralizado ou alinhado como preferir */
+    padding: 30px 35px; /* Padding reduzido para ficar compacto */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    text-align: left; /* Alinhamento padrão à esquerda para estrutura */
 }
 
 .host-card-box h2 {
     color: var(--tropical-teal);
-    margin-bottom: 25px;
-    font-size: 2rem;
+    margin-bottom: 20px;
+    font-size: 1.8rem; /* Levemente menor para acompanhar o card */
+    text-align: center; /* Título centralizado no card */
 }
 
 .host-message {
-    font-style: italic;
-    color: #666;
-    margin-bottom: 30px;
-    line-height: 1.8;
-    font-size: 1.1rem;
+    font-style: normal; /* SEM itálico, como solicitado */
+    color: #3B2F2F; /* COR MARROM CAFÉ ESCURO (Alto Contraste Elegante) */
+    margin-bottom: 25px;
+    line-height: 1.6;
+    font-size: 1rem;
+    text-align: justify; /* Texto justificado */
 }
 
 .host-contacts-block {
-    margin-top: 30px;
+    margin-top: 20px;
     background-color: #fafafa;
-    padding: 25px;
+    padding: 20px;
     border-radius: 6px;
     border-left: 4px solid var(--warm-gold);
-    display: inline-block;
     width: 100%;
-    text-align: left;
 }
 
 .contact-row {
     display: flex;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 12px;
-    font-size: 1.1rem;
-    color: var(--text-grey);
+    gap: 12px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #333; /* Texto dos contatos escuro */
+    font-weight: 500;
 }
 .contact-row:last-child { margin-bottom: 0; }
 .contact-row svg {
-    width: 22px; height: 22px; color: var(--tropical-teal); stroke-width: 2;
+    width: 20px; height: 20px; color: var(--tropical-teal); stroke-width: 2;
 }
 
 .host-signature-styled {
     font-family: var(--font-heading);
-    font-style: italic;
-    font-size: 3rem;
+    font-style: italic; /* A assinatura mantém o estilo */
+    font-size: 2.5rem; /* Um pouco menor para caber melhor */
     color: var(--warm-gold);
-    margin-top: 40px;
+    margin-top: 30px;
     display: block;
+    text-align: center;
     letter-spacing: 1px;
 }
 
 /* Responsivo */
 @media (max-width: 768px) {
     .contact-split-layout {
-        flex-direction: column; /* Empilha no celular */
-        gap: 40px;
+        flex-direction: column;
+        gap: 30px;
         text-align: center;
     }
-    .contact-intro-side { text-align: center; }
-    .gold-separator { margin: 25px auto 0 auto; }
-    .host-card-box { padding: 30px 20px; }
+    .contact-intro-side { 
+        text-align: center; 
+        padding-right: 0;
+    }
+    .gold-separator { margin: 20px auto 0 auto; }
+    .host-card-box { padding: 25px 20px; }
 }
