@@ -311,3 +311,66 @@ footer { background-color: var(--pure-white); border-top: 1px solid var(--light-
     .hero-header h1 { font-size: 2rem; }
     .checklist-box { padding: 25px; }
 }
+
+/* --- MODAL DE ZOOM (ESTILO PARA AMPLIAR IMAGEM) --- */
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed; /* Fica fixo na tela mesmo rolando */
+    z-index: 2000; /* Garante que fique acima de tudo (header, textos) */
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Permite rolar se a imagem for muito alta */
+    background-color: rgba(0,0,0,0.9); /* Fundo preto 90% opaco */
+    
+    /* Flex para centralização perfeita */
+    align-items: center; 
+    justify-content: center;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: auto;
+    max-width: 90%; /* Não deixa a imagem passar da largura da tela */
+    max-height: 90vh; /* Não deixa a imagem passar da altura da tela */
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    animation: zoom 0.4s; /* Efeito suave de entrada */
+}
+
+/* Animação de Zoom */
+@keyframes zoom {
+    from {transform:scale(0.8); opacity: 0;}
+    to {transform:scale(1); opacity: 1;}
+}
+
+/* Botão de Fechar (X) */
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    z-index: 2001;
+    line-height: 1;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: var(--warm-gold);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Ajustes para Celular */
+@media only screen and (max-width: 700px){
+    .modal-content { width: 95%; }
+    .close-modal { top: 15px; right: 20px; font-size: 30px; }
+}
