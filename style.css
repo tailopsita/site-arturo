@@ -14,12 +14,20 @@
 /* Reset básico */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* Imagens responsivas por padrão - ISSO EVITA QUE A IMAGEM ESTOURE A TELA */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 body {
     font-family: var(--font-body);
     background-color: var(--sand-bg);
     color: var(--text-grey);
     line-height: 1.6;
     padding-bottom: 40px;
+    overflow-x: hidden; /* Impede rolagem lateral indesejada */
 }
 
 /* Tipografia */
@@ -49,6 +57,7 @@ nav a:hover, nav a.active { color: var(--warm-gold); }
     font-size: 0.8rem;
     border: 1px solid var(--warm-gold);
     transition: all 0.3s ease;
+    white-space: nowrap; /* Impede que o texto do botão quebre */
 }
 .btn-airbnb:hover {
     background-color: transparent;
@@ -61,19 +70,6 @@ nav a:hover, nav a.active { color: var(--warm-gold); }
 .hero-header h1 { font-size: 2.8rem; color: var(--tropical-teal); margin-bottom: 10px; line-height: 1.2; }
 .subtitle { font-size: 1rem; color: var(--warm-gold); font-family: var(--font-body); font-weight: 500; text-transform: uppercase; letter-spacing: 3px; }
 
-/* Hero com Imagem de Fundo */
-.hero-bg {
-    background-size: cover; background-position: center; background-repeat: no-repeat;
-    position: relative; color: var(--pure-white) !important; padding: 100px 20px;
-}
-.hero-overlay {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)); 
-    width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 1;
-}
-.hero-content-text { position: relative; z-index: 2; }
-.hero-bg h1 { color: var(--pure-white); text-shadow: 2px 2px 4px rgba(0,0,0,0.5); font-size: 3rem; }
-.hero-bg .subtitle { color: #f0f0f0; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
-
 /* Intro (Home) */
 .intro { 
     padding: 40px 20px 80px 20px; 
@@ -83,12 +79,15 @@ nav a:hover, nav a.active { color: var(--warm-gold); }
 }
 .intro-img img { 
     width: 100%; 
-    height: auto; 
     border-radius: 8px; 
     box-shadow: 25px 25px 0px rgba(198, 156, 109, 0.2); 
 }
 .intro-text h2 { font-size: 2.2rem; margin-bottom: 20px; color: var(--tropical-teal); }
 .address { display: block; margin-top: 25px; padding: 15px; background: var(--pure-white); border-left: 4px solid var(--warm-gold); font-size: 0.9rem; font-style: italic; color: #8D5524; }
+
+/* Botões Gerais */
+.btn { display: inline-block; background-color: var(--tropical-teal); color: var(--pure-white); padding: 16px 40px; border-radius: 50px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin-top: 30px; border: 2px solid var(--tropical-teal); box-shadow: 0 4px 15px rgba(31, 94, 86, 0.3); }
+.btn:hover { background-color: transparent; color: var(--tropical-teal); }
 
 /* --- SEÇÃO DO MAPA --- */
 .map-section {
@@ -102,8 +101,6 @@ nav a:hover, nav a.active { color: var(--warm-gold); }
 .map-container img {
     max-width: 800px;
     width: 100%;
-    height: auto;
-    display: block;
     margin: 0 auto;
     border-radius: 8px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.05);
@@ -140,7 +137,7 @@ nav a:hover, nav a.active { color: var(--warm-gold); }
 .review-date { display: block; font-size: 0.75rem; color: #999; margin-top: 5px; font-weight: 400; }
 .review-card::before { content: "“"; font-family: serif; font-size: 5rem; color: rgba(198, 156, 109, 0.1); position: absolute; top: -10px; left: 20px; line-height: 1; }
 
-/* --- GERAIS E GRIDS --- */
+/* --- GERAIS E GRIDS (APARTAMENTO) --- */
 .room-section { display: flex; align-items: center; gap: 60px; margin-bottom: 100px; padding-top: 20px; }
 .room-section.reverse { flex-direction: row-reverse; }
 .room-text { flex: 1; }
@@ -150,22 +147,15 @@ nav a:hover, nav a.active { color: var(--warm-gold); }
 .room-features li::before { content: "•"; color: var(--warm-gold); font-weight: bold; font-size: 1.5rem; position: absolute; left: 0; top: -5px; }
 
 /* Imagens Gerais */
+.room-img { flex: 1.2; }
 .room-img img, .room-img-grid img, .room-img-grid-3 img {
     width: 100%; object-fit: cover; border-radius: 8px;
     box-shadow: 10px 10px 0px rgba(198, 156, 109, 0.15);
     cursor: zoom-in; transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.room-img img:hover, .room-img-grid img:hover, .room-img-grid-3 img:hover {
-    transform: translateY(-5px); box-shadow: 15px 15px 0px rgba(198, 156, 109, 0.25);
-}
-.room-img { flex: 1.2; } .room-img img { height: 450px; }
+.room-img img { height: 450px; }
 .room-img-grid { flex: 1.2; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; } .room-img-grid img { height: 450px; }
 .room-img-grid-3 { flex: 1.5; display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; } .room-img-grid-3 img { height: 300px; }
-
-/* Modal */
-.modal { display: none; position: fixed; z-index: 2000; padding-top: 50px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.9); }
-.modal-content { margin: auto; display: block; width: auto; max-width: 90%; max-height: 90vh; border: 2px solid var(--warm-gold); border-radius: 4px; }
-.close-modal { position: absolute; top: 20px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; cursor: pointer; }
 
 /* Amenidades */
 .amenities-section { background-color: var(--pure-white); padding: 60px 40px; border-radius: 12px; margin-top: 80px; border: 1px solid rgba(198, 156, 109, 0.2); }
@@ -173,9 +163,9 @@ nav a:hover, nav a.active { color: var(--warm-gold); }
 .amenity-item { display: flex; align-items: center; gap: 15px; color: #555; font-size: 0.95rem; font-weight: 500; }
 .amenity-icon { width: 25px !important; height: 25px !important; min-width: 25px; stroke: var(--tropical-teal); fill: none; stroke-width: 2; }
 
-/* Cards */
+/* Cards (Guia do Bairro) */
 .section-title { color: var(--tropical-teal); font-size: 2rem; margin-bottom: 40px; text-align: center; }
-.grid-icons { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; align-items: start; }
+.grid-icons { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; align-items: start; }
 .card { padding: 0 0 25px 0; border: 1px solid rgba(0,0,0,0.02); border-radius: 8px; background-color: var(--pure-white); display: flex; flex-direction: column; align-items: center; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.03); transition: 0.4s; height: 100%; }
 .card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.08); border-color: var(--warm-gold); }
 .card-image { width: 100%; height: 180px; object-fit: cover; margin-bottom: 20px; filter: brightness(0.98); border-radius: 8px 8px 0 0; }
@@ -184,9 +174,7 @@ nav a:hover, nav a.active { color: var(--warm-gold); }
 .card em { display: block; margin-top: auto; font-style: normal; color: var(--warm-gold); font-weight: 500; font-size: 0.8rem; margin-bottom: 15px; }
 .card-padding-icon { padding-top: 45px; }
 
-/* Botões */
-.btn { display: inline-block; background-color: var(--tropical-teal); color: var(--pure-white); padding: 16px 40px; border-radius: 50px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin-top: 30px; border: 2px solid var(--tropical-teal); box-shadow: 0 4px 15px rgba(31, 94, 86, 0.3); }
-.btn:hover { background-color: transparent; color: var(--tropical-teal); }
+/* Botões de Mapa */
 .btn-map { display: inline-flex; align-items: center; gap: 8px; margin-top: auto; color: var(--warm-gold); font-size: 0.85rem; font-weight: 600; padding: 8px 16px; border: 1px solid var(--warm-gold); border-radius: 20px; transition: all 0.3s ease; text-decoration: none; }
 .btn-map:hover { background-color: var(--warm-gold); color: white; }
 .btn-map svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; }
@@ -198,224 +186,82 @@ nav a:hover, nav a.active { color: var(--warm-gold); }
 .icon-svg-large { width: 60px; height: 60px; }
 .clean-list { list-style: none; padding: 0 10px; text-align: left; font-size: 0.9rem; color: #555; }
 .clean-list li { margin-bottom: 15px; display: flex; align-items: flex-start; gap: 12px; }
-.list-icon { min-width: 20px; width: 20px; height: 20px; stroke: var(--tropical-teal); stroke-width: 2; fill: none; margin-top: 2px; }
 
-/* Footer & Créditos */
+/* --- NOVO LAYOUT DE CONTATO (Refinado) --- */
+.contact-split-layout {
+    display: flex; align-items: center; justify-content: center; gap: 40px; margin-bottom: 60px;
+    max-width: 1000px; margin-left: auto; margin-right: auto;
+}
+.contact-intro-side { flex: 1; text-align: right; padding-right: 20px; }
+.contact-intro-side h1 { font-size: 3rem; color: var(--tropical-teal); line-height: 1.1; margin-bottom: 10px; }
+.gold-separator { width: 60px; height: 4px; background-color: var(--warm-gold); margin-top: 20px; margin-left: auto; }
+.contact-host-side { flex: 1.2; }
+.host-card-box {
+    background-color: var(--pure-white); border: 1px solid rgba(198, 156, 109, 0.3); border-radius: 8px;
+    padding: 30px 35px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: left;
+}
+.host-card-box h2 { color: var(--tropical-teal); margin-bottom: 20px; font-size: 1.8rem; text-align: center; }
+.host-message { font-style: normal; color: #3B2F2F; margin-bottom: 25px; line-height: 1.6; font-size: 1rem; text-align: justify; }
+.host-contacts-block { margin-top: 20px; background-color: #fafafa; padding: 20px; border-radius: 6px; border-left: 4px solid var(--warm-gold); width: 100%; }
+.contact-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; font-size: 1rem; color: #333; font-weight: 500; }
+.contact-row:last-child { margin-bottom: 0; }
+.contact-row svg { width: 20px; height: 20px; color: var(--tropical-teal); stroke-width: 2; }
+.host-signature-styled {
+    font-family: var(--font-heading); font-style: italic; font-size: 2.5rem; color: var(--warm-gold);
+    margin-top: 30px; display: block; text-align: center; letter-spacing: 1px;
+}
+
+/* --- ESTILO PARA CARDS DE SERVIÇOS (COMPACTO) --- */
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px; }
+.service-card {
+    background-color: #fafafa; border: 1px solid rgba(0,0,0,0.05); border-radius: 8px; padding: 15px;
+    text-align: left; transition: all 0.3s ease; display: flex; flex-direction: column; justify-content: center;
+}
+.service-card:hover { transform: translateY(-2px); background-color: var(--pure-white); box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-color: rgba(198, 156, 109, 0.3); }
+.icon-svg-small { width: 30px; height: 30px; stroke: var(--warm-gold); fill: none; stroke-width: 1.5; margin-bottom: 10px; }
+.service-card h4 { color: var(--tropical-teal); font-size: 0.95rem; margin-bottom: 4px; font-weight: 700; }
+.service-card p { font-size: 0.8rem; color: #666; margin-bottom: 8px; line-height: 1.3; }
+.service-card a { font-size: 0.75rem; color: var(--warm-gold); font-weight: 600; text-decoration: underline; }
+
+/* Footer */
 footer { background-color: var(--pure-white); border-top: 1px solid var(--light-border); color: var(--tropical-teal); text-align: center; padding: 50px 0; margin-top: 60px; }
 .developer-credit { font-size: 0.8rem; margin-top: 10px; opacity: 0.8; }
 .developer-credit a { color: var(--warm-gold); font-weight: 600; }
 .developer-credit a:hover { text-decoration: underline; }
 
-/* --- NOVO LAYOUT DE CONTATO (Refinado) --- */
+/* --- RESPONSIVIDADE (MEDIA QUERIES GLOBAIS) --- */
+/* Esta seção é crucial para corrigir os problemas no iPhone e Motorola */
 
-.contact-split-layout {
-    display: flex;
-    align-items: center; 
-    justify-content: center; /* Centraliza o conjunto na tela */
-    gap: 40px; /* Espaçamento equilibrado */
-    margin-bottom: 60px;
-    max-width: 1000px; /* Limita a largura total para não esticar demais */
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* LADO ESQUERDO: Título/Intro */
-.contact-intro-side {
-    flex: 1; 
-    text-align: right; /* Alinha o título à direita, encostando no card */
-    padding-right: 20px;
-}
-
-.contact-intro-side h1 {
-    font-size: 3rem; 
-    color: var(--tropical-teal);
-    line-height: 1.1;
-    margin-bottom: 10px;
-}
-
-.gold-separator {
-    width: 60px;
-    height: 4px;
-    background-color: var(--warm-gold);
-    margin-top: 20px;
-    margin-left: auto; /* Joga a linha para a direita */
-}
-
-/* LADO DIREITO: Anfitrião */
-.contact-host-side {
-    flex: 1.2; /* Um pouco maior que o título, mas controlado */
-}
-
-.host-card-box {
-    background-color: var(--pure-white);
-    border: 1px solid rgba(198, 156, 109, 0.3);
-    border-radius: 8px;
-    padding: 30px 35px; /* Padding reduzido para ficar compacto */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    text-align: left; /* Alinhamento padrão à esquerda para estrutura */
-}
-
-.host-card-box h2 {
-    color: var(--tropical-teal);
-    margin-bottom: 20px;
-    font-size: 1.8rem; /* Levemente menor para acompanhar o card */
-    text-align: center; /* Título centralizado no card */
-}
-
-.host-message {
-    font-style: normal; /* SEM itálico, como solicitado */
-    color: #3B2F2F; /* COR MARROM CAFÉ ESCURO (Alto Contraste Elegante) */
-    margin-bottom: 25px;
-    line-height: 1.6;
-    font-size: 1rem;
-    text-align: justify; /* Texto justificado */
-}
-
-.host-contacts-block {
-    margin-top: 20px;
-    background-color: #fafafa;
-    padding: 20px;
-    border-radius: 6px;
-    border-left: 4px solid var(--warm-gold);
-    width: 100%;
-}
-
-.contact-row {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 10px;
-    font-size: 1rem;
-    color: #333; /* Texto dos contatos escuro */
-    font-weight: 500;
-}
-.contact-row:last-child { margin-bottom: 0; }
-.contact-row svg {
-    width: 20px; height: 20px; color: var(--tropical-teal); stroke-width: 2;
-}
-
-.host-signature-styled {
-    font-family: var(--font-heading);
-    font-style: italic; /* A assinatura mantém o estilo */
-    font-size: 2.5rem; /* Um pouco menor para caber melhor */
-    color: var(--warm-gold);
-    margin-top: 30px;
-    display: block;
-    text-align: center;
-    letter-spacing: 1px;
-}
-
-/* Responsivo */
-/* --- CORREÇÕES DE RESPONSIVIDADE (Android e Telas Menores) --- */
-
-@media (max-width: 900px) { /* Aumentei o limite para pegar tablets e celulares grandes */
+@media (max-width: 950px) { /* Aumentei o limite para pegar tablets e telas grandes */
     
-    /* Conserta o Cabeçalho quebrando */
-    .header-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
-    }
+    /* 1. Header e Menu */
+    .header-content { flex-direction: column; text-align: center; gap: 15px; }
+    nav ul { flex-wrap: wrap; justify-content: center; gap: 15px; padding: 0; }
+    nav a { font-size: 0.85rem; padding: 5px 10px; display: inline-block; }
 
-    nav ul {
-        flex-wrap: wrap; /* Permite que os itens do menu desçam se faltar espaço */
-        justify-content: center;
-        gap: 15px;
-        padding: 0;
-    }
-
-    nav a {
-        font-size: 0.85rem; /* Fonte um pouco maior para toque */
-        padding: 8px 10px;
-        display: inline-block;
-    }
-
-    /* Conserta a seção "Sala de Estar" e outras divididas */
+    /* 2. Seções Divididas (Intro, Apartamento, Contato) */
+    .intro, 
     .room-section, 
-    .room-section.reverse,
+    .room-section.reverse, 
     .contact-split-layout {
         flex-direction: column !important; /* Força empilhamento vertical */
+        text-align: center;
         gap: 30px;
     }
 
-    .room-text, .room-img, 
-    .contact-intro-side, .contact-host-side {
-        width: 100%; /* Garante que ocupem a largura total */
-        flex: none;
-    }
-
-    /* Ajustes específicos de texto */
-    .contact-intro-side {
-        text-align: center; /* Centraliza o título no celular */
+    /* 3. Textos e Alinhamentos */
+    .intro-text, .room-text, .contact-intro-side, .contact-host-side {
+        width: 100%;
         padding-right: 0;
+        text-align: center;
     }
     
-    .gold-separator {
-        margin: 20px auto; /* Centraliza o traço dourado */
-    }
+    .address { text-align: center; border-left: none; border-top: 4px solid var(--warm-gold); }
+    .gold-separator { margin: 20px auto; }
+    .contact-intro-side h1 { font-size: 2.5rem; }
 
-    /* Garante que imagens não estourem a tela */
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-}
-
-/* --- ESTILO PARA CARDS DE SERVIÇOS (COMPACTO) --- */
-
-.services-grid {
-    display: grid;
-    /* Colunas menores (min 200px) para caberem mais itens na linha */
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-    gap: 15px; /* Gap menor para compactar */
-    margin-top: 20px;
-}
-
-.service-card {
-    background-color: #fafafa;
-    border: 1px solid rgba(0,0,0,0.05);
-    border-radius: 8px;
-    padding: 15px; /* Padding reduzido */
-    text-align: left;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.service-card:hover {
-    transform: translateY(-2px);
-    background-color: var(--pure-white);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    border-color: rgba(198, 156, 109, 0.3);
-}
-
-.icon-svg-small {
-    width: 30px; /* Ícone reduzido */
-    height: 30px;
-    stroke: var(--warm-gold);
-    fill: none;
-    stroke-width: 1.5;
-    margin-bottom: 10px;
-}
-
-.service-card h4 {
-    color: var(--tropical-teal);
-    font-size: 0.95rem; /* Fonte do título menor */
-    margin-bottom: 4px;
-    font-weight: 700;
-}
-
-.service-card p {
-    font-size: 0.8rem; /* Texto do endereço menor */
-    color: #666;
-    margin-bottom: 8px;
-    line-height: 1.3;
-}
-
-.service-card a {
-    font-size: 0.75rem;
-    color: var(--warm-gold);
-    font-weight: 600;
-    text-decoration: underline;
+    /* 4. Imagens */
+    .room-img img, .room-img-grid img { height: 300px; } /* Altura menor para mobile */
+    .room-img-grid-3 { grid-template-columns: 1fr; } /* Fotos de 3 colunas viram 1 */
+    .room-img-grid-3 img { height: 250px; }
 }
