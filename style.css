@@ -20,39 +20,33 @@ body {
     color: var(--text-grey);
     line-height: 1.6;
     padding-bottom: 40px;
-    overflow-x: hidden; /* Evita rolagem lateral no celular */
+    overflow-x: hidden;
 }
 
-/* IMAGENS RESPONSIVAS (Essencial para não quebrar o layout mobile) */
+/* IMAGENS RESPONSIVAS */
 img {
     max-width: 100%;
     height: auto;
     display: block;
 }
 
-/* --- REGRA DE SEGURANÇA MÁXIMA PARA ÍCONES (CORRIGE O PRETO/GROSSEIRO) --- */
-/* Isso afeta TODAS as páginas, consertando o Check-in e o Guia */
-svg {
-    fill: none !important; /* Remove o preenchimento preto forçadamente */
-}
+/* --- REGRA DE SEGURANÇA PARA ÍCONES --- */
+/* Garante que todos os ícones sejam dourados e finos, exceto onde especificado */
+svg { fill: none !important; }
 
-/* Ícones Dourados (Padrão) */
 .icon-svg, .icon-svg-large, .icon-svg-small {
     stroke: var(--warm-gold);
     fill: none;
-    stroke-width: 1.5; /* Garante traço fino e elegante */
+    stroke-width: 1.5;
     stroke-linecap: round;
     stroke-linejoin: round;
 }
 
-/* Ícones de Amenidades (Geralmente Verde Teal) */
 .amenity-icon {
     stroke: var(--tropical-teal);
     fill: none;
     stroke-width: 1.5;
-    width: 25px !important; 
-    height: 25px !important; 
-    min-width: 25px;
+    width: 25px !important; height: 25px !important; min-width: 25px;
 }
 
 /* Tipografia */
@@ -84,11 +78,7 @@ nav a:hover, nav a.active { color: var(--warm-gold); }
     transition: all 0.3s ease;
     white-space: nowrap;
 }
-.btn-airbnb:hover {
-    background-color: transparent;
-    color: var(--warm-gold) !important;
-    transform: scale(1.05);
-}
+.btn-airbnb:hover { background-color: transparent; color: var(--warm-gold) !important; transform: scale(1.05); }
 
 /* --- HERO & INTRO --- */
 .hero-header { text-align: center; padding: 60px 20px 40px 20px; }
@@ -101,11 +91,44 @@ nav a:hover, nav a.active { color: var(--warm-gold); }
 .intro-text h2 { font-size: 2.2rem; margin-bottom: 20px; color: var(--tropical-teal); }
 .address { display: block; margin-top: 25px; padding: 15px; background: var(--pure-white); border-left: 4px solid var(--warm-gold); font-size: 0.9rem; font-style: italic; color: #8D5524; }
 
-/* Botões Gerais */
+/* Botões */
 .btn { display: inline-block; background-color: var(--tropical-teal); color: var(--pure-white); padding: 16px 40px; border-radius: 50px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin-top: 30px; border: 2px solid var(--tropical-teal); box-shadow: 0 4px 15px rgba(31, 94, 86, 0.3); }
 .btn:hover { background-color: transparent; color: var(--tropical-teal); }
 
-/* --- GERAIS E GRIDS (APARTAMENTO) --- */
+/* --- SEÇÃO DO MAPA --- */
+.map-section { background-color: var(--pure-white); padding: 60px 0; margin-bottom: 60px; text-align: center; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
+.map-container img { max-width: 800px; width: 100%; margin: 0 auto; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border: 4px solid white; outline: 1px solid var(--light-border); }
+
+/* --- SEÇÃO DE AVALIAÇÕES (HOME) --- */
+.reviews-section { background-color: #f8f8f8; padding: 80px 0; margin-top: 40px; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
+
+/* Grid de Avaliações (Volta ao original: 3 colunas automáticas) */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Mantém 3 blocos lado a lado no desktop */
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.review-card {
+    background-color: var(--pure-white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border: 1px solid rgba(198, 156, 109, 0.15);
+    text-align: center;
+    position: relative;
+    display: flex; /* Garante estrutura */
+    flex-direction: column;
+    height: 100%; /* Altura igual para todos */
+}
+.review-stars { color: var(--warm-gold); font-size: 1.2rem; letter-spacing: 2px; margin-bottom: 15px; display: block; }
+.review-text { font-family: var(--font-body); font-style: italic; color: #555; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px; }
+.review-author { font-weight: 700; color: var(--tropical-teal); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; margin-top: auto; }
+.review-date { display: block; font-size: 0.75rem; color: #999; margin-top: 5px; font-weight: 400; }
+.review-card::before { content: "“"; font-family: serif; font-size: 5rem; color: rgba(198, 156, 109, 0.1); position: absolute; top: -10px; left: 20px; line-height: 1; }
+
+/* --- GERAIS (APARTAMENTO) --- */
 .room-section { display: flex; align-items: center; gap: 60px; margin-bottom: 100px; padding-top: 20px; }
 .room-section.reverse { flex-direction: row-reverse; }
 .room-text { flex: 1; }
@@ -114,7 +137,7 @@ nav a:hover, nav a.active { color: var(--warm-gold); }
 .room-features li { margin-bottom: 12px; padding-left: 25px; position: relative; font-size: 0.95rem; }
 .room-features li::before { content: "•"; color: var(--warm-gold); font-weight: bold; font-size: 1.5rem; position: absolute; left: 0; top: -5px; }
 
-/* Imagens Gerais */
+/* Imagens */
 .room-img { flex: 1.2; }
 .room-img img, .room-img-grid img, .room-img-grid-3 img { width: 100%; object-fit: cover; border-radius: 8px; box-shadow: 10px 10px 0px rgba(198, 156, 109, 0.15); cursor: zoom-in; transition: transform 0.3s ease, box-shadow 0.3s ease; }
 .room-img img { height: 450px; }
@@ -126,7 +149,7 @@ nav a:hover, nav a.active { color: var(--warm-gold); }
 .amenities-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 25px; margin-top: 30px; }
 .amenity-item { display: flex; align-items: center; gap: 15px; color: #555; font-size: 0.95rem; font-weight: 500; }
 
-/* Cards (Guia do Bairro) */
+/* Cards (Guia) */
 .section-title { color: var(--tropical-teal); font-size: 2rem; margin-bottom: 40px; text-align: center; }
 .grid-icons { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; align-items: start; }
 .card { padding: 0 0 25px 0; border: 1px solid rgba(0,0,0,0.02); border-radius: 8px; background-color: var(--pure-white); display: flex; flex-direction: column; align-items: center; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.03); transition: 0.4s; height: 100%; }
@@ -137,7 +160,6 @@ nav a:hover, nav a.active { color: var(--warm-gold); }
 .card em { display: block; margin-top: auto; font-style: normal; color: var(--warm-gold); font-weight: 500; font-size: 0.8rem; margin-bottom: 15px; }
 .card-padding-icon { padding-top: 45px; }
 
-/* Botões de Mapa */
 .btn-map { display: inline-flex; align-items: center; gap: 8px; margin-top: auto; color: var(--warm-gold); font-size: 0.85rem; font-weight: 600; padding: 8px 16px; border: 1px solid var(--warm-gold); border-radius: 20px; transition: all 0.3s ease; text-decoration: none; }
 .btn-map:hover { background-color: var(--warm-gold); color: white; }
 .btn-map svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; }
@@ -147,11 +169,11 @@ nav a:hover, nav a.active { color: var(--warm-gold); }
 .icon-svg { width: 50px; height: 50px; margin-bottom: 20px; display: block; margin-left: auto; margin-right: auto; }
 .icon-svg-large { width: 60px; height: 60px; margin-bottom: 20px; display: block; margin-left: auto; margin-right: auto; }
 
-/* Listas Limpas */
+/* Listas */
 .clean-list { list-style: none; padding: 0 10px; text-align: left; font-size: 0.9rem; color: #555; }
 .clean-list li { margin-bottom: 15px; display: flex; align-items: flex-start; gap: 12px; }
 
-/* --- NOVO LAYOUT DE CONTATO (Refinado) --- */
+/* --- CONTATO (LADO A LADO) --- */
 .contact-split-layout { display: flex; align-items: center; justify-content: center; gap: 40px; margin-bottom: 60px; max-width: 1000px; margin-left: auto; margin-right: auto; }
 .contact-intro-side { flex: 1; text-align: right; padding-right: 20px; }
 .contact-intro-side h1 { font-size: 3rem; color: var(--tropical-teal); line-height: 1.1; margin-bottom: 10px; }
@@ -166,20 +188,43 @@ nav a:hover, nav a.active { color: var(--warm-gold); }
 .contact-row svg { width: 20px; height: 20px; color: var(--tropical-teal); stroke-width: 2; }
 .host-signature-styled { font-family: var(--font-heading); font-style: italic; font-size: 2.5rem; color: var(--warm-gold); margin-top: 30px; display: block; text-align: center; letter-spacing: 1px; }
 
-/* --- ESTILO PARA CARDS DE SERVIÇOS (GRID 3 COLUNAS) --- */
+/* --- SERVIÇOS (GUIA) --- */
 .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px; }
-
-/* Regra para Desktop: 3 colunas */
-@media (min-width: 992px) {
-    .services-grid { grid-template-columns: repeat(3, 1fr); }
-}
-
+@media (min-width: 992px) { .services-grid { grid-template-columns: repeat(3, 1fr); } }
 .service-card { background-color: #fafafa; border: 1px solid rgba(0,0,0,0.05); border-radius: 8px; padding: 20px; text-align: left; transition: all 0.3s ease; display: flex; flex-direction: column; justify-content: center; }
 .service-card:hover { transform: translateY(-3px); background-color: var(--pure-white); box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-color: rgba(198, 156, 109, 0.3); }
 .icon-svg-small { width: 35px; height: 35px; stroke: var(--warm-gold); fill: none; stroke-width: 1.5; margin-bottom: 15px; }
 .service-card h4 { color: var(--tropical-teal); font-size: 1rem; margin-bottom: 5px; font-weight: 700; }
 .service-card p { font-size: 0.85rem; color: #666; margin-bottom: 10px; line-height: 1.4; }
 .service-card a { font-size: 0.8rem; color: var(--warm-gold); font-weight: 600; text-decoration: underline; }
+
+/* --- CHECK-OUT LIST (CORREÇÃO DA PÁGINA CHECKIN) --- */
+/* Novo grid organizado para as tarefas de saída */
+.checkout-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Mantém layout lado a lado */
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.checkout-item {
+    background-color: var(--pure-white);
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-align: left;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.03);
+}
+
+.checkout-item span {
+    font-weight: 500;
+    color: var(--text-grey);
+    font-size: 0.95rem;
+}
 
 /* Footer */
 footer { background-color: var(--pure-white); border-top: 1px solid var(--light-border); color: var(--tropical-teal); text-align: center; padding: 50px 0; margin-top: 60px; }
@@ -188,6 +233,7 @@ footer { background-color: var(--pure-white); border-top: 1px solid var(--light-
 .developer-credit a:hover { text-decoration: underline; }
 
 /* --- RESPONSIVIDADE GLOBAL (CORRIGE IPHONE/ANDROID) --- */
+/* Aplica-se APENAS quando a tela for menor que 950px */
 @media (max-width: 950px) { 
     /* 1. Header e Menu */
     .header-content { flex-direction: column; text-align: center; gap: 15px; }
@@ -196,11 +242,10 @@ footer { background-color: var(--pure-white); border-top: 1px solid var(--light-
 
     /* 2. Seções Divididas */
     .intro, .room-section, .room-section.reverse, .contact-split-layout {
-        flex-direction: column !important; /* Força empilhamento */
-        text-align: center; gap: 30px;
+        flex-direction: column !important; text-align: center; gap: 30px;
     }
 
-    /* 3. Ajuste de Larguras */
+    /* 3. Textos e Alinhamentos */
     .intro-text, .room-text, .contact-intro-side, .contact-host-side { width: 100%; padding-right: 0; text-align: center; }
     
     .address { text-align: center; border-left: none; border-top: 4px solid var(--warm-gold); }
@@ -211,4 +256,7 @@ footer { background-color: var(--pure-white); border-top: 1px solid var(--light-
     .room-img img, .room-img-grid img { height: 300px; }
     .room-img-grid-3 { grid-template-columns: 1fr; }
     .room-img-grid-3 img { height: 250px; }
+    
+    /* 5. Check-in Grid Mobile */
+    .checkout-grid { grid-template-columns: 1fr; }
 }
